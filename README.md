@@ -1,6 +1,6 @@
 
-# AgrawalAmey's Website
+# Webpage for Systems for AI Lab at Georgia Tech
 
-Visit **[ameya.info/gatech-sysml](http://ameya.info/gatech-sysml)** 🚀
+Visit **[gatech-sysml](http://gatech-sysml.github.io)** 🚀
 
-_Built with [Lab Website Template](https://greene-lab.gitbook.io/lab-website-template-docs)_
+For documentation refer:  [Lab Website Template](https://greene-lab.gitbook.io/lab-website-template-docs)_
