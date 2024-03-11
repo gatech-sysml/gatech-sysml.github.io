@@ -1,10 +1,11 @@
 ---
 name: Alexey Tumanov
-image: https://faculty.cc.gatech.edu/~atumanov/img/AlexeyTumanov-202105.png
+image: https://ca.slack-edge.com/TMK09MG0J-UMQ27F6G1-bd50123e718c-512
 role: pi
 aliases:
   - A. Tumanov
   - A Tumanov
+  - Alexey Tumanov
 links:
   home-page: https://faculty.cc.gatech.edu/~atumanov/
 ---
