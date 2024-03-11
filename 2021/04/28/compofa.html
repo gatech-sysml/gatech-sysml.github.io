@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="true">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--
+  put your analytics (e.g. Google Analytics) tracking code here
+-->
+
+  <!--
+  put your search engine verification (e.g. Google Search Console) tag here
+-->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Introducing CompOFA | Systems for AI Lab</title>
+
+<link rel="icon" href="/images/icon.png">
+
+<meta name="title" content="Introducing CompOFA">
+<meta name="description" content="Georgia Tech. Fast &amp; Efficient Training of Once-For-All (OFA) models.">
+
+<meta property="og:title" content="Introducing CompOFA">
+<meta property="og:site_title" content="Systems for AI Lab">
+<meta property="og:description" content="Georgia Tech. Fast &amp; Efficient Training of Once-For-All (OFA) models.">
+<meta property="og:url" content="">
+<meta property="og:image" content="/images/share.jpg">
+<meta property="og:locale" content="en_US">
+
+<meta property="twitter:title" content="Introducing CompOFA">
+<meta property="twitter:description" content="Georgia Tech. Fast &amp; Efficient Training of Once-For-All (OFA) models.">
+<meta property="twitter:url" content="">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="/images/share.jpg">
+
+
+  <meta property="og:type" content="website">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "WebSite",
+    
+    "name": "Introducing CompOFA",
+    "description": "Georgia Tech. Fast & Efficient Training of Once-For-All (OFA) models.",
+    "headline": "Introducing CompOFA",
+    "publisher": {
+      "@type": "Organization",
+      "logo": { "@type": "ImageObject", "url": "/images/icon.png" }
+    },
+    "url": ""
+  }
+</script>
+
+<link rel="alternate" type="application/rss+xml" href="/feed.xml">
+
+  <!-- Google Fonts -->
+<!-- automatically get url from fonts used in theme file -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?display=swap&&family=Barlow:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;family=Roboto+Mono:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600" rel="stylesheet">
+
+<!-- Font Awesome icons (load asynchronously due to size) -->
+
+<link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet" media="none" onload="this.removeAttribute('media'); this.onload = null;">
+<noscript>
+  <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
+</noscript>
+
+  <!-- third party styles -->
+<!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
+<link href="https://cdn.jsdelivr.net/gh/StylishThemes/Syntax-Themes/pygments/css-github/pygments-tomorrow-night-eighties.css" rel="stylesheet">
+
+<!-- include all sass in styles folder -->
+
+
+  
+    <link href="/_styles/-theme.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/alert.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/all.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/anchor.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/background.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/body.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/bold.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/button.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/card.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/checkbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/citation.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/code.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/cols.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/dark-toggle.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/feature.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/figure.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/float.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/font.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/footer.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/form.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/grid.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/header.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/heading.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/highlight.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/icon.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/image.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/link.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/list.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/main.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/paragraph.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/portrait.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/post-excerpt.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/post-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/post-nav.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/quote.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/rule.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/search-box.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/search-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/section.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/table.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/tags.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/textbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/tooltip.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/util.css" rel="stylesheet">
+  
+
+
+<!-- include all css in styles folder -->
+
+
+
+  <!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/_scripts/anchors.js"></script>
+
+  <script src="/_scripts/dark-mode.js"></script>
+
+  <script src="/_scripts/fetch-tags.js"></script>
+
+  <script src="/_scripts/search.js"></script>
+
+  <script src="/_scripts/site-search.js"></script>
+
+  <script src="/_scripts/table-wrap.js"></script>
+
+  <script src="/_scripts/tooltip.js"></script>
+
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+  <body>
+    
+
+
+
+
+
+
+
+<header class="background" style="--image: url('/images/background.jpeg')" data-dark="true">
+  <a href="/" class="home">
+    
+      <span class="logo">
+        
+          <svg width="280" height="280" viewbox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M145.72 198.266C116.304 240.943 50.0917 270.831 27.7682 280C30.5432 277.648 72.1133 241.816 83.3688 209.083C95.2138 174.646 96.689 160.251 78.7401 121.743C58.3935 78.0945 6.07179 8.50722 0 6.23391e-06C26.9845 17.7046 83.9361 49.9954 110.543 75.9959C137.716 102.546 154.443 132.476 156.43 158.124C157.575 172.787 153.967 186.294 145.72 198.266Z" fill="#6F00FF"></path>
+<path d="M220.834 152.743C221.011 168.194 214.506 184.517 200.609 200.04C176.616 226.843 139.458 239.989 105.389 251.023C129.243 236.501 139.018 227.139 154.814 204.237C164.948 189.533 167.798 175.166 166.376 156.884C163.279 117.01 133.887 82.7983 116.637 65.9529C98.5215 48.2483 85.7297 38.3383 58.0792 19.2252C58.1358 19.2393 163.735 64.7557 196.147 100.63C212.343 118.56 220.645 136.095 220.834 152.743Z" fill="#9A4DFF"></path>
+<path d="M206.215 210.689C206.614 210.266 207.004 209.801 207.392 209.35C223.154 190.871 231.045 171.758 230.825 152.561C230.591 131.87 221.4 111.757 202.719 91.0805C188.343 75.1788 166.277 59.2066 141.857 44.4176C172.637 56.9671 202.752 70.3899 225.851 83.0803C322.466 136.194 273.304 168.843 206.215 210.689Z" fill="#C599FF"></path>
+</svg>
+
+        
+      </span>
+    
+    
+      <span class="title-text" data-tooltip="Home">
+        
+          <span class="title">Systems for AI Lab</span>
+        
+        
+          <span class="subtitle">Georgia Tech</span>
+        
+      </span>
+    
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <nav>
+    
+    
+      
+        <a href="/research/" data-tooltip="Published works">
+          Research
+        </a>
+      
+    
+      
+        <a href="/team/" data-tooltip="About our team">
+          Team
+        </a>
+      
+    
+      
+        <a href="/blog/" data-tooltip="Musings and miscellany">
+          Blog
+        </a>
+      
+    
+  </nav>
+</header>
+
+    <main>
+      <!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - filter out blank sections
+-->
+
+
+
+
+
+
+  
+  
+  
+
+  <section class="background" data-size="1" style="--image: url('https://github.com/gatech-sysml/CompOFA/raw/main/figures/overview.png')">
+    <!--
+  background: https://github.com/gatech-sysml/CompOFA/raw/main/figures/overview.png;
+  dark: ;
+  size: 1;
+-->
+
+
+<h1 class="center">Introducing CompOFA</h1>
+
+<div class="post-info">
+  
+    
+    
+      
+
+<div class="portrait-wrapper">
+  <a href="/members/alind-khare.html" class="portrait" data-style="tiny" aria-label="Alind Khare">
+    <img src="https://sites.cc.gatech.edu/~akhare39/authors/admin/avatar_huef7f98e02012c4daf178f31d4434e323_800200_250x250_fill_q90_lanczos_center.jpg" class="portrait-image" alt="member portrait" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+
+    
+      <span class="portrait-text">
+        
+          <span class="portrait-name">
+            Alind Khare
+          </span>
+        
+
+        
+          <span class="portrait-role">
+            
+            <i class="icon fa-solid fa-graduation-cap"></i>
+            <span>PhD Student</span>
+          </span>
+        
+      </span>
+    
+  </a>
+</div>
+
+    
+  
+    
+    
+      
+
+<div class="portrait-wrapper">
+  <a href="/members/alexey-tumanov.html" class="portrait" data-style="tiny" aria-label="Alexey Tumanov">
+    <img src="https://faculty.cc.gatech.edu/~atumanov/img/AlexeyTumanov-202105.png" class="portrait-image" alt="member portrait" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+
+    
+      <span class="portrait-text">
+        
+          <span class="portrait-name">
+            Alexey Tumanov
+          </span>
+        
+
+        
+          <span class="portrait-role">
+            
+            <i class="icon fa-solid fa-microscope"></i>
+            <span>Principal Investigator</span>
+          </span>
+        
+      </span>
+    
+  </a>
+</div>
+
+    
+  
+
+  
+  
+
+  
+    <span data-tooltip="Originally published on">
+      <i class="icon fa-regular fa-calendar"></i>
+      <span>April 28, 2021</span>
+    </span>
+  
+
+  
+    <span data-tooltip="Last updated on">
+      <i class="icon fa-solid fa-clock-rotate-left"></i>
+      <span>March 11, 2024</span>
+    </span>
+  
+</div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  background: ;
+  dark: ;
+  size: ;
+-->
+
+
+<h1 id="introduction">Introduction</h1>
+
+<p>If you’ve trained deep learning models, you know the process can take hours or days (weeks?) and thousands of dollars’ worth of computation. With increasing use of DNNs in common production, this problem only gets bigger – they need to be used on diverse deployment targets with widely varying latency constraints, based on hardware capabilities and application requirements. Designing DNN architectures that maximize accuracy under these constraints adds another degree of complexity requiring manual expertise and/or neural architecture search (NAS) – which are even slower and costlier than training. Clearly, repeating these processes for every deployment target is not scalable and therefore, solving this problem is essential for making DNNs easier to use in real deployment.</p>
+
+<figure class="figure">
+  <a class="figure-image" aria-label="figure link">
+    <img src="/images/posts/compofa/model-family.png" style="
+        width: 400px;
+        max-height: unset;
+      " alt="figure image" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+  </a>
+  
+</figure>
+
+<p>In <em>CompOFA</em>, we propose a cost-effective and faster technique to build model families that support multiple deployment platforms. Using insights from model design and system deployment, we build upon the current best methods that take 40-50 GPU days of computation and make their training and searching processes <strong>faster by 2x and 200x</strong>, respectively – all while building a family of equally efficient and diverse models!</p>
+
+<h1 id="how-its-done-today">How it’s done today</h1>
+
+<figure class="figure">
+  <a class="figure-image" aria-label="Conventional, individual training">
+    <img src="/images/posts/compofa/naive-training.png" style="
+        width: 400px;
+        max-height: unset;
+      " alt="Conventional, individual training" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+  </a>
+  
+    <figcaption class="figure-caption">
+      Conventional, individual training
+
+    </figcaption>
+  
+</figure>
+
+<p>The prevailing norm today is to build individual neural networks. We design and train single monolithic DNNs with a fixed accuracy and latency measure (or computational complexity, energy usage, etc.). Both, designing efficient architectures and training on production-grade datasets, require computation worth several GPU hours with slow turnaround, expensive hardwares and expertise in ML and Systems. In 2019, a study estimated the carbon emissions of one well-known NAS technique to be 283 metric tons – or nearly 60 times the emissions over an average human lifetime! Thus it is simply unscalable to continue this trend of designing and training individual DNNs for deployment.</p>
+
+<figure class="figure">
+  <a class="figure-image" aria-label="Once-For-All (OFA): co-trained model families">
+    <img src="/images/posts/compofa/ofa.png" style="
+        width: 400px;
+        max-height: unset;
+      " alt="Once-For-All (OFA): co-trained model families" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+  </a>
+  
+    <figcaption class="figure-caption">
+      Once-For-All (OFA): co-trained model families
+
+    </figcaption>
+  
+</figure>
+
+<p><em>Once-For-All (OFA)</em> proposed to address this problem via weight-shared sub-networks of a larger network. These sub-networks of varying sizes had diverse accuracy and latency measures and could be trained simultaneously (rather than one-by-one). Post this one-time training, one can independently search and extract a subnetwork with optimal accuracy for a given deployment. Hence, OFA significantly improved the scalability over the naïve method. But, at 40-50 GPU days of train time, OFA remained expensive and required special training &amp; searching procedures for its huge search space of $10^{19}$ models.</p>
+
+<p>In <em>CompOFA</em>, we find insights that speed up OFA’s training and searching methodologies, while making it easier to use.</p>
+
+<h1 id="compofa">CompOFA</h1>
+
+<p>OFA built a model search space by slicing smaller subnetworks from a larger network – by choosing subsets of its layers (depth), channels (width), resolution, etc. This choice was made independently at each layer, contributing to a combinatorial explosion of $10^{10}-10^{19}$ models! These models don’t come free – training so many of them together needs a slow, phased approach. After training, the search also requires building special accuracy and latency estimators.</p>
+
+<p><strong>But do we need such a large search space?</strong></p>
+
+<ul>
+  <li>
+    <p><strong>Are all these models efficient? No!</strong> Many of these subnetworks are of dimensions that are suboptimal, lying well below the optimal accuracy-latency tradeoff.</p>
+  </li>
+  <li>
+    <p><strong>Are all these models different enough? No!</strong> Imagine $10^{19}$ networks where the smallest and largest differ in latency by just 100ms – this fine granularity is too small to matter for real hardware.</p>
+  </li>
+</ul>
+
+<p>In CompOFA, we question whether we can identify and focus our attention just on models that are close to optimal, and at a sufficient granularity?  After all, it’s not common practice to treat these model dimensions as independent or random –- we often combine dimensions like depth and width to vary together i.e. in a compound fashion. This common intuition is backed by empirical studies like <a href="https://arxiv.org/abs/1905.11946">EfficientNet</a> and <a href="https://arxiv.org/abs/2003.13678">RegNet</a>, which showed that there are optimal relations between these dimensions.</p>
+
+<figure class="figure">
+  <a class="figure-image" aria-label="CompOFA reduces combinatorial explosion of the search space by exploiting the same direction of growth of accuracy and latency.">
+    <img src="/images/posts/compofa/dw-grid.png" style="
+        width: 400px;
+        max-height: unset;
+      " alt="CompOFA reduces combinatorial explosion of the search space by exploiting the same direction of growth of accuracy and latency." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+  </a>
+  
+    <figcaption class="figure-caption">
+      CompOFA reduces combinatorial explosion of the search space by exploiting the same direction of growth of accuracy and latency.
+
+    </figcaption>
+  
+</figure>
+
+<p>Inspired by this, CompOFA uses a simple but powerful heuristic – <strong>choose models that grow depth and width together</strong>. This makes our search space much more tractable, but still just as efficient and diverse for actual use.</p>
+
+<p>In our paper, we show that we can train this model family in <strong>half the time</strong> and all at once, without a slow phased approach. After training, we can search for models <strong>216x</strong> faster, and without the time and effort to build special estimators.</p>
+
+<center>
+
+<!-- | \*\*Metric\*\*               |   \*\*OFA\*\* | \*\*CompOFA\*\* |  \*\*Savings\*\* |
+|--------------------------|----------:|------------:|-------------:|
+| \*\*Train Time\*\* \(GPU hrs) |     978.3 |       493.5 |       \*\*2x\*\* |
+| \*\*Train Cost\*\* \(USD)     |     \$2.4k |       \$1.2k |       \*\*2x\*\* |
+| \*\*CO2 emissions\*\* \(lbs)  |       277 |         128 |       \*\*2x\*\* |
+| \*\*Search Time\*\*          | 4.5 hours |  75 seconds |     \*\*216x\*\* | -->
+
+<figure class="figure">
+  <a class="figure-image" aria-label="figure link">
+    <img src="/images/posts/compofa/table.png" style="
+        width: 400px;
+        max-height: unset;
+      " alt="figure image" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+  </a>
+  
+</figure>
+
+
+
+</center>
+
+<p>Despite these savings, CompOFA does not compromise on its original goal. It’s able to extract networks for multiple latency targets on distinct hardware types, and match the existing SOTA in both optimality and range of its models.</p>
+
+<figure class="figure">
+  <a class="figure-image" aria-label="CompOFA generates efficient model families for diverse hardwares -- from mobile phones to GPUs">
+    <img src="/images/posts/compofa/pareto-results.png" style="
+        width: 400px;
+        max-height: unset;
+      " alt="CompOFA generates efficient model families for diverse hardwares -- from mobile phones to GPUs" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+  </a>
+  
+    <figcaption class="figure-caption">
+      CompOFA generates efficient model families for diverse hardwares – from mobile phones to GPUs
+
+    </figcaption>
+  
+</figure>
+
+<h1 id="learn-more">Learn more</h1>
+
+<p>CompOFA improves the speed, cost, and usability of jointly training models for many deployment targets. By highlighting insights on model design and system deployment, we try to address an important problem for real-world usability of DNNs.</p>
+
+<p>To know more, please check out our <a href="https://arxiv.org/abs/2104.12642">paper</a> and <a href="https://iclr.cc/media/PosterPDFs/ICLR%202021/2c3ddf4bf13852db711dd1901fb517fa.png">poster</a> at ICLR 2021! Our code and pretrained models are also available on our <a href="https://github.com/gatech-sysml/compofa">Github repository</a>.</p>
+
+<h2 id="citation">Citation</h2>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">compofa-iclr21</span><span class="p">,</span>
+  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Manas Sahni and Shreya Varshini and Alind Khare and
+               Alexey Tumanov}</span><span class="p">,</span>
+  <span class="na">title</span>     <span class="p">=</span> <span class="s">{CompOFA: Compound Once-For-All Networks for Faster Multi-Platform Deployment}</span><span class="p">,</span>
+  <span class="na">month</span>     <span class="p">=</span> <span class="s">{May}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proc. of the 9th International Conference on Learning Representations}</span><span class="p">,</span>
+  <span class="na">series</span> <span class="p">=</span> <span class="s">{ICLR '21}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2021}</span><span class="p">,</span>
+  <span class="na">url</span>       <span class="p">=</span> <span class="s">{https://openreview.net/forum?id=IgIk8RRT-Z}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  background: ;
+  dark: ;
+  size: ;
+-->
+
+
+<div class="post-nav">
+  <span>
+    
+  </span>
+  <span>
+    
+  </span>
+</div>
+  </section>
+
+
+    </main>
+    
+
+
+<footer class="background" style="--image: url('')" data-dark="true" data-size="wide">
+  <!--
+    <div>
+      Extra details like contact info or address
+    </div>
+  -->
+
+  <div>
+    
+  </div>
+
+  <div>
+    © 2024
+    Systems for AI Lab
+     
+  </div>
+
+  <!-- <input
+    type="checkbox"
+    class="dark-toggle"
+    data-tooltip="Dark mode"
+    aria-label="toggle dark mode"
+    oninput="onDarkToggleChange(event)"
+  > -->
+</footer>
+
+  </body>
+</html>
