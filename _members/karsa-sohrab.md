@@ -1,7 +1,0 @@
----
-name: Kasra Sohrab
-image: https://media.licdn.com/dms/image/C5603AQExmk75bxmQNw/profile-displayphoto-shrink_400_400/0/1589406551907?e=1715817600&v=beta&t=TJMjTpUKFHZG44sQG8GVoF4AQrgHXx16sgoao0e3WAU
-role: undergrad
-links:
-  home-page: https://www.linkedin.com/in/kasohrab/
----
