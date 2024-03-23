@@ -5,6 +5,7 @@ The System for AI Lab (SAIL) at Georgia Tech, led by Prof. Alexey Tumanov, speci
 
 # Recent News
 
+- Sarathi-Serve ☸️, our paper on efficient LLM inference has been accepted at OSDI'24.
 - Vidur 👳🏽, our paper on large scale LLM inference cluster simulation has been accepted at MLSys'24.
 - [Payman Behnam](/members/payman-behnam) awarded [NVIDIA Graduate Fellowship 2024](https://blogs.nvidia.com/blog/graduate-research-fellowships-for-2024/) for advancing machine learning and systems with high-performance, low-latency, and energy-efficient hardware designs.
 - [Payman Behnam](/members/payman-behnam) receives [Qualcomm Innovation Fellowship 2023](https://www.qualcomm.com/research/university-relations/innovation-fellowship/winners) for his work on Hardware-Software Co-Design for DNN inference systems.

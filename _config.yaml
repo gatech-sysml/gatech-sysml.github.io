@@ -7,6 +7,7 @@ header: images/background.jpeg
 proofer: false
 header-dark: true
 footer-dark: true
+url: "https://gatech-sysml.github.io"
 
 # site social media and other links
 # links:
