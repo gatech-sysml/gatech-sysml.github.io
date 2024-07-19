@@ -1,3 +1,11 @@
+- id: arxiv:2407.06167 # deps
+  image: images/publication_thumbnails/deps.png
+  publisher: "18th European Conference on Computer Vision (ECCV 2024), Milano, Italy, Oct 2024"
+- id: arxiv:2301.10879 # SuperFedNAS
+  image: images/publication_thumbnails/superfednas.png
+  publisher: "18th European Conference on Computer Vision (ECCV 2024), Milano, Italy, Oct 2024"
+- id: arxiv:2306.11800 # dynaquant
+  image: https://ameya.info/images/project-list-thumbnails/dynaquant.png
 - id: arxiv:2306.11800 # dynaquant
   image: https://ameya.info/images/project-list-thumbnails/dynaquant.png
 - id: arxiv:2407.07000 # metron
@@ -15,7 +23,7 @@
       link: https://github.com/microsoft/sarathi-serve
 - id: arxiv:2308.16369 # sarathi
   image: https://ameya.info/images/project-list-thumbnails/sarathi.png
-- title: arxiv:2405.05465 # vidur
+- id: arxiv:2405.05465 # vidur
   buttons:
     - type: video
       link: https://mlsys.org/virtual/2024/poster/2667
@@ -49,8 +57,6 @@
 - id: arxiv:2210.15056 # unfoldml
   publisher: "Proc. of 36'th Conference on Neural Information Processing Systems (NeurIPS'22)"
   image: images/publication_thumbnails/unfoldml.png
-- id: arxiv:2301.10879 # superfed
-  image: images/publication_thumbnails/superfed.png
 - title:  "Harmonica: Hybrid Accelerator to Overcome Imperfections of Mixed-signal DNN Accelerators" # harmonica
   date: "2024-05-27"
   authors:
