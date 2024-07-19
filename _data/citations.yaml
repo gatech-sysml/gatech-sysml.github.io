@@ -33,7 +33,7 @@
   image: https://github.com/project-metron/metron/blob/main/docs/_static/assets/deadline.png?raw=true
   buttons:
   - type: code
-    link: github.com/project-metron/metron/
+    link: https://github.com/project-metron/metron/
   plugin: sources.py
   file: sources.yaml
 - id: arxiv:2403.02310
@@ -74,17 +74,7 @@
   image: https://ameya.info/images/project-list-thumbnails/sarathi.png
   plugin: sources.py
   file: sources.yaml
-- title: 'Vidur: A Large Scale Simulation Framework For LLM Inference'
-  date: '2024-05-13'
-  authors:
-  - Amey Agrawal
-  - Nitin Kedia
-  - Jayashree Mohan
-  - Ashish Panwar
-  - Nipun Kwatra
-  - Bhargav S. Gulavani
-  - Ramachandran Ramjee
-  - Alexey Tumanov
+- title: arxiv:2405.05465
   buttons:
   - type: video
     link: https://mlsys.org/virtual/2024/poster/2667
