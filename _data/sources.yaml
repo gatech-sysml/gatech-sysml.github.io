@@ -4,7 +4,7 @@
   image: https://github.com/project-metron/metron/blob/main/docs/_static/assets/deadline.png?raw=true
   buttons:
     - type: code
-      link: github.com/project-metron/metron/
+      link: https://github.com/project-metron/metron/
 - id: arxiv:2403.02310 # sarathi-serve
   publisher: "18th USENIX Symposium on Operating Systems Design and Implementation (OSDI’24), Santa Clara"
   image: https://ameya.info/images/project-list-thumbnails/sarathi-serve.png
