@@ -16,6 +16,26 @@
   image: https://ameya.info/images/project-list-thumbnails/dynaquant.png
   plugin: sources.py
   file: sources.yaml
+- id: arxiv:2407.07000
+  title: 'Metron: Holistic Performance Evaluation Framework for LLM Inference Systems'
+  authors:
+  - Amey Agrawal
+  - Anmol Agarwal
+  - Nitin Kedia
+  - Jayashree Mohan
+  - Souvik Kundu
+  - Nipun Kwatra
+  - Ramachandran Ramjee
+  - Alexey Tumanov
+  publisher: arXiv
+  date: '2024-07-10'
+  link: https://arxiv.org/abs/2407.07000
+  image: https://github.com/project-metron/metron/blob/main/docs/_static/assets/deadline.png?raw=true
+  buttons:
+  - type: code
+    link: github.com/project-metron/metron/
+  plugin: sources.py
+  file: sources.yaml
 - id: arxiv:2403.02310
   title: Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve
   authors:
@@ -27,10 +47,16 @@
   - Bhargav S. Gulavani
   - Alexey Tumanov
   - Ramachandran Ramjee
-  publisher: arXiv
-  date: '2024-03-05'
+  publisher: "18th USENIX Symposium on Operating Systems Design and Implementation\
+    \ (OSDI\u201924), Santa Clara"
+  date: '2024-06-19'
   link: https://arxiv.org/abs/2403.02310
   image: https://ameya.info/images/project-list-thumbnails/sarathi-serve.png
+  buttons:
+  - type: video
+    link: https://www.usenix.org/conference/osdi24/presentation/agrawal
+  - type: code
+    link: https://github.com/microsoft/sarathi-serve
   plugin: sources.py
   file: sources.yaml
 - id: arxiv:2308.16369
@@ -59,6 +85,11 @@
   - Bhargav S. Gulavani
   - Ramachandran Ramjee
   - Alexey Tumanov
+  buttons:
+  - type: video
+    link: https://mlsys.org/virtual/2024/poster/2667
+  - type: code
+    link: https://github.com/microsoft/vidur
   publisher: "7th Annual Conference on Machine Learning Systems (MLSys\u201924), Santa\
     \ Clara"
   image: https://ameya.info/images/project-list-thumbnails/vidur.png
@@ -164,14 +195,18 @@
   plugin: sources.py
   file: sources.yaml
 - id: arxiv:2301.10879
-  title: 'SuperFed: Weight Shared Federated Learning'
+  title: 'SuperFedNAS: Cost-Efficient Federated Neural Architecture Search for On-Device
+    Inference'
   authors:
   - Alind Khare
   - Animesh Agrawal
+  - Aditya Annavajjala
+  - Payman Behnam
   - Myungjin Lee
+  - Hugo Latapie
   - Alexey Tumanov
   publisher: arXiv
-  date: '2023-01-27'
+  date: '2024-07-12'
   link: https://arxiv.org/abs/2301.10879
   image: images/publication_thumbnails/superfed.png
   plugin: sources.py
