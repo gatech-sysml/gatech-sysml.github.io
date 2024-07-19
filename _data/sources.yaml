@@ -1,20 +1,26 @@
 - id: arxiv:2306.11800 # dynaquant
   image: https://ameya.info/images/project-list-thumbnails/dynaquant.png
+- id: arxiv:2407.07000 # metron
+  image: https://github.com/project-metron/metron/blob/main/docs/_static/assets/deadline.png?raw=true
+  buttons:
+    - type: code
+      link: https://github.com/project-metron/metron/
 - id: arxiv:2403.02310 # sarathi-serve
+  publisher: "18th USENIX Symposium on Operating Systems Design and Implementation (OSDI’24), Santa Clara"
   image: https://ameya.info/images/project-list-thumbnails/sarathi-serve.png
+  buttons:
+    - type: video
+      link: https://www.usenix.org/conference/osdi24/presentation/agrawal
+    - type: code
+      link: https://github.com/microsoft/sarathi-serve
 - id: arxiv:2308.16369 # sarathi
   image: https://ameya.info/images/project-list-thumbnails/sarathi.png
-- title:  "Vidur: A Large Scale Simulation Framework For LLM Inference"
-  date: "2024-05-13"
-  authors:
-    - Amey Agrawal
-    - Nitin Kedia
-    - Jayashree Mohan
-    - Ashish Panwar
-    - Nipun Kwatra
-    - Bhargav S. Gulavani
-    - Ramachandran Ramjee
-    - Alexey Tumanov
+- title: arxiv:2405.05465 # vidur
+  buttons:
+    - type: video
+      link: https://mlsys.org/virtual/2024/poster/2667
+    - type: code
+      link: https://github.com/microsoft/vidur
   publisher: "7th Annual Conference on Machine Learning Systems (MLSys’24), Santa Clara"
   image: https://ameya.info/images/project-list-thumbnails/vidur.png
 - id: doi:10.1145/3394486.3403212 # holmes
