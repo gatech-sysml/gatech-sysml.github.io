@@ -1,5 +1,40 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
+- id: arxiv:2407.06167
+  title: 'D{\epsilon}pS: Delayed {\epsilon}-Shrinking for Faster Once-For-All Training'
+  authors:
+  - Aditya Annavajjala
+  - Alind Khare
+  - Animesh Agrawal
+  - Igor Fedorov
+  - Hugo Latapie
+  - Myungjin Lee
+  - Alexey Tumanov
+  publisher: 18th European Conference on Computer Vision (ECCV 2024), Milano, Italy,
+    Oct 2024
+  date: '2024-07-09'
+  link: https://arxiv.org/abs/2407.06167
+  image: images/publication_thumbnails/deps.png
+  plugin: sources.py
+  file: sources.yaml
+- id: arxiv:2301.10879
+  title: 'SuperFedNAS: Cost-Efficient Federated Neural Architecture Search for On-Device
+    Inference'
+  authors:
+  - Alind Khare
+  - Animesh Agrawal
+  - Aditya Annavajjala
+  - Payman Behnam
+  - Myungjin Lee
+  - Hugo Latapie
+  - Alexey Tumanov
+  publisher: 18th European Conference on Computer Vision (ECCV 2024), Milano, Italy,
+    Oct 2024
+  date: '2024-07-12'
+  link: https://arxiv.org/abs/2301.10879
+  image: images/publication_thumbnails/superfednas.png
+  plugin: sources.py
+  file: sources.yaml
 - id: arxiv:2306.11800
   title: 'DynaQuant: Compressing Deep Learning Training Checkpoints via Dynamic Quantization'
   authors:
@@ -74,14 +109,26 @@
   image: https://ameya.info/images/project-list-thumbnails/sarathi.png
   plugin: sources.py
   file: sources.yaml
-- title: arxiv:2405.05465
+- id: arxiv:2405.05465
+  title: 'Vidur: A Large-Scale Simulation Framework For LLM Inference'
+  authors:
+  - Amey Agrawal
+  - Nitin Kedia
+  - Jayashree Mohan
+  - Ashish Panwar
+  - Nipun Kwatra
+  - Bhargav Gulavani
+  - Ramachandran Ramjee
+  - Alexey Tumanov
+  publisher: "7th Annual Conference on Machine Learning Systems (MLSys\u201924), Santa\
+    \ Clara"
+  date: '2024-05-22'
+  link: https://arxiv.org/abs/2405.05465
   buttons:
   - type: video
     link: https://mlsys.org/virtual/2024/poster/2667
   - type: code
     link: https://github.com/microsoft/vidur
-  publisher: "7th Annual Conference on Machine Learning Systems (MLSys\u201924), Santa\
-    \ Clara"
   image: https://ameya.info/images/project-list-thumbnails/vidur.png
   plugin: sources.py
   file: sources.yaml
@@ -182,23 +229,6 @@
   date: '2022-10-31'
   link: https://arxiv.org/abs/2210.15056
   image: images/publication_thumbnails/unfoldml.png
-  plugin: sources.py
-  file: sources.yaml
-- id: arxiv:2301.10879
-  title: 'SuperFedNAS: Cost-Efficient Federated Neural Architecture Search for On-Device
-    Inference'
-  authors:
-  - Alind Khare
-  - Animesh Agrawal
-  - Aditya Annavajjala
-  - Payman Behnam
-  - Myungjin Lee
-  - Hugo Latapie
-  - Alexey Tumanov
-  publisher: arXiv
-  date: '2024-07-12'
-  link: https://arxiv.org/abs/2301.10879
-  image: images/publication_thumbnails/superfed.png
   plugin: sources.py
   file: sources.yaml
 - title: 'Harmonica: Hybrid Accelerator to Overcome Imperfections of Mixed-signal
