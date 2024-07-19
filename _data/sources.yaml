@@ -6,8 +6,6 @@
   publisher: "18th European Conference on Computer Vision (ECCV 2024), Milano, Italy, Oct 2024"
 - id: arxiv:2306.11800 # dynaquant
   image: https://ameya.info/images/project-list-thumbnails/dynaquant.png
-- id: arxiv:2306.11800 # dynaquant
-  image: https://ameya.info/images/project-list-thumbnails/dynaquant.png
 - id: arxiv:2407.07000 # metron
   image: https://github.com/project-metron/metron/blob/main/docs/_static/assets/deadline.png?raw=true
   buttons:
