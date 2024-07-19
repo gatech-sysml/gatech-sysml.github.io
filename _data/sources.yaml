@@ -15,17 +15,7 @@
       link: https://github.com/microsoft/sarathi-serve
 - id: arxiv:2308.16369 # sarathi
   image: https://ameya.info/images/project-list-thumbnails/sarathi.png
-- title:  "Vidur: A Large Scale Simulation Framework For LLM Inference"
-  date: "2024-05-13"
-  authors:
-    - Amey Agrawal
-    - Nitin Kedia
-    - Jayashree Mohan
-    - Ashish Panwar
-    - Nipun Kwatra
-    - Bhargav S. Gulavani
-    - Ramachandran Ramjee
-    - Alexey Tumanov
+- title: arxiv:2405.05465 # vidur
   buttons:
     - type: video
       link: https://mlsys.org/virtual/2024/poster/2667
