@@ -1,3 +1,5 @@
+- id: arxiv:2409.17264 # mnemosyne
+  image: images/publication_thumbnails/mnemosyne.png
 - id: arxiv:2407.06167 # deps
   image: images/publication_thumbnails/deps.png
   publisher: "18th European Conference on Computer Vision (ECCV 2024), Milano, Italy, Oct 2024"
@@ -6,6 +8,7 @@
   publisher: "18th European Conference on Computer Vision (ECCV 2024), Milano, Italy, Oct 2024"
 - id: arxiv:2306.11800 # dynaquant
   image: https://ameya.info/images/project-list-thumbnails/dynaquant.png
+  publisher: "15th ACM Symposium on Cloud Computing (SoCC 2024), Redmond, USA, Nov 2024"
 - id: arxiv:2407.07000 # metron
   image: https://github.com/project-metron/metron/blob/main/docs/_static/assets/deadline.png?raw=true
   buttons:
@@ -65,8 +68,17 @@
     - Saibal Mukhopadhyay
   publisher: "Proc. 38'th IEEE International Parallel and Distributed Processing Symposium (IPDPS'24)"
   image: images/publication_thumbnails/harmonica.png
+- title:  "PLUM: Improving Inference Efficiency By Leveraging Repetition-Sparsity Trade-Off" # Plum
+  date: "2024-08-27"
+  authors:
+    - Sachit Kuhar
+    - Yash Jain
+    - Alexey Tumanov
+  publisher: "Transactions on Machine Learning Research"
+  image: images/publication_thumbnails/plum.png
 - id: arxiv:2312.16733 # superserve
   image: images/publication_thumbnails/superserve.png
+  publisher: "22nd USENIX Symposium on Networked Systems Design and Implementation (NSDI'25), Philadelphia, USA, 2025."
 - title: "TransEHR: Self-Supervised Transformer for Clinical Time Series Data" # TransEHR
   authors:
     - Yanbo Xu
