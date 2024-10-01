@@ -263,16 +263,6 @@
   image: images/publication_thumbnails/harmonica.png
   plugin: sources.py
   file: sources.yaml
-- title: 'PLUM: Improving Inference Efficiency By Leveraging Repetition-Sparsity Trade-Off'
-  date: '2024-08-27'
-  authors:
-  - Sachit Kuhar
-  - Yash Jain
-  - Alexey Tumanov
-  publisher: Transactions on Machine Learning Research
-  image: images/publication_thumbnails/plum.png
-  plugin: sources.py
-  file: sources.yaml
 - id: arxiv:2312.16733
   title: 'SuperServe: Fine-Grained Inference Serving for Unpredictable Workloads'
   authors:
