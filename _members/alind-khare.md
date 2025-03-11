@@ -1,7 +1,7 @@
 ---
 name: Alind Khare
 image: https://sites.cc.gatech.edu/~akhare39/authors/admin/avatar_huef7f98e02012c4daf178f31d4434e323_800200_250x250_fill_q90_lanczos_center.jpg
-role: phd
+role: phd-alumni
 links:
   home-page: https://sites.cc.gatech.edu/~akhare39/
 ---

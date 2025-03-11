@@ -1,7 +1,7 @@
 ---
 name: Srihas Yarlagadda
 image: https://pbs.twimg.com/profile_images/1500825469843030021/NR9jAR9T_400x400.jpg
-role: masters
+role: masters-alumni
 links:
   home-page: https://www.linkedin.com/in/srihas-yarlagadda/
 ---

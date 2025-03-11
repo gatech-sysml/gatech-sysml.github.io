@@ -1,7 +1,7 @@
 ---
 name: Elton Pinto
 image: https://media.licdn.com/dms/image/C4E03AQFR8QKBkszoMg/profile-displayphoto-shrink_400_400/0/1577137201999?e=1715817600&v=beta&t=iIFijA4PSe4y6eQBJLqQ6po2CpUefetOytR7hB9NMSs
-role: masters-alumni
+role: phd
 links:
   home-page: https://www.eltonpinto.me/
 ---

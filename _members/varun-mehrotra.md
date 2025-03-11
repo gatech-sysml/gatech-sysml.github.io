@@ -1,7 +1,7 @@
 ---
 name: Varun Mehrotra
 image: https://media.licdn.com/dms/image/D4E03AQHvunRPvATDQQ/profile-displayphoto-shrink_800_800/0/1704822675323?e=1715817600&v=beta&t=dpR87-vQaQLEs5nzfRSyvkx4C90C8ZsvD8DcsGPlb6I
-role: undergrad
+role: masters
 links:
   home-page: https://www.linkedin.com/in/varun-mehrotra-9a47aa168/
 ---

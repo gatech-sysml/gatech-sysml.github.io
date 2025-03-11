@@ -1,3 +1,5 @@
+- id: arxiv.org:2502.14051 # rocketkv
+  image: images/publication_thumbnails/rocketkv.png
 - id: arxiv:2409.17264 # mnemosyne
   image: images/publication_thumbnails/mnemosyne.png
 - id: arxiv:2407.06167 # deps
