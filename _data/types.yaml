@@ -14,6 +14,10 @@ phd:
   icon: fa-solid fa-user-graduate
   description: PhD Student
 
+phd-alumni:
+  icon: fa-solid fa-graduation-cap
+  description: Past PhD Student
+
 masters:
   icon: fa-solid fa-user-graduate
   description: Masters Student
@@ -25,6 +29,10 @@ masters-alumni:
 undergrad:
   icon: fa-solid fa-user-graduate
   description: Undergraduate Student
+
+undergrad-alumni:
+  icon: fa-solid fa-graduation-cap
+  description: Past Undergraduate Student
 
 programmer:
   icon: fa-solid fa-code

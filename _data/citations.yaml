@@ -1,5 +1,21 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
+- id: arxiv:2502.14051
+  title: 'RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache
+    Compression'
+  authors:
+  - Payman Behnam
+  - Yaosheng Fu
+  - Ritchie Zhao
+  - Po-An Tsai
+  - Zhiding Yu
+  - Alexey Tumanov
+  publisher: arXiv
+  date: '2025-02-21'
+  link: https://arxiv.org/abs/2502.14051
+  image: images/publication_thumbnails/rocketkv.png
+  plugin: sources.py
+  file: sources.yaml
 - id: arxiv:2409.17264
   title: 'Mnemosyne: Parallelization Strategies for Efficiently Serving Multi-Million
     Context Length LLM Inference Requests Without Approximations'
@@ -53,7 +69,8 @@
   plugin: sources.py
   file: sources.yaml
 - id: arxiv:2306.11800
-  title: 'DynaQuant: Compressing Deep Learning Training Checkpoints via Dynamic Quantization'
+  title: 'Inshrinkerator: Compressing Deep Learning Training Checkpoints via Dynamic
+    Quantization'
   authors:
   - Amey Agrawal
   - Sameer Reddy
@@ -64,13 +81,13 @@
   - Alexey Tumanov
   publisher: 15th ACM Symposium on Cloud Computing (SoCC 2024), Redmond, USA, Nov
     2024
-  date: '2023-09-06'
+  date: '2024-10-15'
   link: https://arxiv.org/abs/2306.11800
   image: https://ameya.info/images/project-list-thumbnails/dynaquant.png
   plugin: sources.py
   file: sources.yaml
 - id: arxiv:2407.07000
-  title: 'Metron: Holistic Performance Evaluation Framework for LLM Inference Systems'
+  title: 'Etalon: Holistic Performance Evaluation Framework for LLM Inference Systems'
   authors:
   - Amey Agrawal
   - Anmol Agarwal
@@ -81,7 +98,7 @@
   - Ramachandran Ramjee
   - Alexey Tumanov
   publisher: arXiv
-  date: '2024-07-10'
+  date: '2024-09-02'
   link: https://arxiv.org/abs/2407.07000
   image: https://github.com/project-metron/metron/blob/main/docs/_static/assets/deadline.png?raw=true
   buttons:

@@ -4,9 +4,11 @@
 The System for AI Lab (SAIL) at Georgia Tech, led by Prof. Alexey Tumanov, specializes in advancing systems support and resource management for machine learning (ML) to democratize large-scale AI systems. Our research encompasses the entire AI infrastructure stack, from foundational system design to the development of efficient ML training and inference algorithms. By focusing on managing the complete ML lifecycle, SAIL aims to enhance accessibility and efficiency in AI technologies.
 
 # Recent News
+
+- Congratulations to Prof. Tumanov on being [awarded tenure](https://www.cc.gatech.edu/news/computing-celebrates-2025-faculty-promotion-and-tenure-cases) and promotion to the position of associate professor 🎉.
+- RocketKV 🚀, fast long-context inference with is now KV-cache compression is now on [Arxiv](https://arxiv.org/abs/2502.14051).
 - Mnemosyne, our paper on efficient inference up to 10M token context lengths is now [public](https://arxiv.org/abs/2409.17264).
 - Our paper on DL training checkpoint compression system, [DynaQuant](https://arxiv.org/abs/2306.11800) has been accepted at SoCC'24.
-
 - [SuperServe](https://arxiv.org/abs/2312.16733) has been accepted at NSDI'25.
 - Metron 📐 -- our LLM inference system benchmark is now [public](https://x.com/agrawalamey12/status/1812203186494837226).
 - [DεpS](https://arxiv.org/abs/2407.06167) and [SuperFedNAS](https://arxiv.org/abs/2301.10879) have been accepted at ECCV'24.
