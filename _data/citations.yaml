@@ -30,7 +30,7 @@
   publisher: arXiv
   date: '2024-09-27'
   link: https://arxiv.org/abs/2409.17264
-  image: images/publication_thumbnails/mnemosyne.png
+  image: images/publication_thumbnails/medha.png
   plugin: sources.py
   file: sources.yaml
 - id: arxiv:2407.06167

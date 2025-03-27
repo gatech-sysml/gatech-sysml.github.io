@@ -5,6 +5,7 @@ The System for AI Lab (SAIL) at Georgia Tech, led by Prof. Alexey Tumanov, speci
 
 # Recent News
 
+- Our papers on [Medha](https://arxiv.org/abs/2502.14051) for efficient multi-million context LLM inference and [Maya](https://arxiv.org/pdf/2503.20191) for optimizing deep learning training workloads are now public.
 - Congratulations to Prof. Tumanov on being [awarded tenure](https://www.cc.gatech.edu/news/computing-celebrates-2025-faculty-promotion-and-tenure-cases) and promotion to the position of associate professor 🎉.
 - RocketKV 🚀, fast long-context inference with is now KV-cache compression is now on [Arxiv](https://arxiv.org/abs/2502.14051).
 - Mnemosyne, our paper on efficient inference up to 10M token context lengths is now [public](https://arxiv.org/abs/2409.17264).

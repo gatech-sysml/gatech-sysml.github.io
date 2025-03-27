@@ -1,7 +1,9 @@
+- id: arxiv:2502.14051 # maya
+  image: images/publication_thumbnails/maya.png
 - id: arxiv:2502.14051 # rocketkv
   image: images/publication_thumbnails/rocketkv.png
-- id: arxiv:2409.17264 # mnemosyne
-  image: images/publication_thumbnails/mnemosyne.png
+- id: arxiv:2409.17264 # medha
+  image: images/publication_thumbnails/medha.png
 - id: arxiv:2407.06167 # deps
   image: images/publication_thumbnails/deps.png
   publisher: "18th European Conference on Computer Vision (ECCV 2024), Milano, Italy, Oct 2024"
