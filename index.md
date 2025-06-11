@@ -5,6 +5,8 @@ The System for AI Lab (SAIL) at Georgia Tech, led by Prof. Alexey Tumanov, speci
 
 # Recent News
 
+- Prof. Tumanov recognized with the Spring [2025 CIOS Honor Roll](https://blog.ctl.gatech.edu/2025/06/11/spring-2025-honor-roll/) - third semester in a row.
+- Congratulations to Prof. Alexey Tumanov for being recognized with the College of Computing [Outstanding Junior Faculty Research Award](https://issuu.com/gt-computing/docs/2025_coc_awards_booklet_v1) in the Spring of 2025!
 - Our papers on [Medha](https://arxiv.org/abs/2502.14051) for efficient multi-million context LLM inference and [Maya](https://arxiv.org/pdf/2503.20191) for optimizing deep learning training workloads are now public.
 - Congratulations to Prof. Tumanov on being [awarded tenure](https://www.cc.gatech.edu/news/computing-celebrates-2025-faculty-promotion-and-tenure-cases) and promotion to the position of associate professor 🎉.
 - RocketKV 🚀, fast long-context inference with is now KV-cache compression is now on [Arxiv](https://arxiv.org/abs/2502.14051).
