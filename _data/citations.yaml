@@ -17,18 +17,20 @@
   plugin: sources.py
   file: sources.yaml
 - id: arxiv:2409.17264
-  title: 'Mnemosyne: Parallelization Strategies for Efficiently Serving Multi-Million
-    Context Length LLM Inference Requests Without Approximations'
+  title: 'Medha: Efficiently Serving Multi-Million Context Length LLM Inference Requests
+    Without Approximations'
   authors:
   - Amey Agrawal
+  - Haoran Qiu
   - Junda Chen
   - "\xCD\xF1igo Goiri"
-  - Ramachandran Ramjee
   - Chaojie Zhang
+  - Rayyan Shahid
+  - Ramachandran Ramjee
   - Alexey Tumanov
   - Esha Choukse
   publisher: arXiv
-  date: '2024-09-27'
+  date: '2025-05-12'
   link: https://arxiv.org/abs/2409.17264
   image: images/publication_thumbnails/medha.png
   plugin: sources.py
