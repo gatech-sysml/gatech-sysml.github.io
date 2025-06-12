@@ -13,7 +13,7 @@ nav:
 {% include list.html data="members" component="portrait" filters="role: pi" %}
 
 ## PhD
-{% include list.html data="members" component="portrait" filters="role: phd" %}
+{% include list.html data="members" component="portrait" filters="role: ^phd$" %}
 
 ## Masters
 {% include list.html data="members" component="portrait" filters="role: ^masters$" %}

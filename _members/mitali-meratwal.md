@@ -1,7 +1,7 @@
 ---
 name: Mitali Meratwal
 image: https://mitali72.github.io/assets/images/my_pic.jpg
-role: masters
+role: masters-alumni
 links:
   home-page: https://mitali72.github.io/
 ---
