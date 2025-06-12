@@ -1,7 +1,7 @@
 ---
 name: Anmol Agarwal
 image: https://media.licdn.com/dms/image/D4D03AQGAoWGCgp0eoA/profile-displayphoto-shrink_800_800/0/1704762392253?e=1715817600&v=beta&t=dzrf-eaYED3m7aw38MKHDEFzoeo88jF9DwLcjnFWkog
-role: masters
+role: masters-alumni
 links:
   home-page: https://www.linkedin.com/in/anmol-agarwal-bbb899187/
 ---

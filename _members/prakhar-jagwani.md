@@ -1,7 +1,7 @@
 ---
 name: Prakhar Jagwani
 image: https://media.licdn.com/dms/image/D4D03AQG2luOxy47a0Q/profile-displayphoto-shrink_400_400/0/1664776987488?e=1715817600&v=beta&t=vSexASvpxVPtHh4el-5wBjTPLeu33sWypjzXJG1buPk
-role: masters
+role: masters-alumni
 links:
   home-page: https://www.linkedin.com/in/prakhar-jagwani/
 ---
