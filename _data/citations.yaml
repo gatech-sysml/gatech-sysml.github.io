@@ -1,5 +1,22 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
+- id: arxiv:2507.09019
+  title: On Evaluating Performance of LLM Inference Serving Systems
+  authors:
+  - Amey Agrawal
+  - Nitin Kedia
+  - Anmol Agarwal
+  - Jayashree Mohan
+  - Nipun Kwatra
+  - Souvik Kundu
+  - Ramachandran Ramjee
+  - Alexey Tumanov
+  publisher: arXiv
+  date: '2025-07-15'
+  link: https://arxiv.org/abs/2507.09019
+  image: images/publication_thumbnails/eval-checklist
+  plugin: sources.py
+  file: sources.yaml
 - id: arxiv:2502.14051
   title: 'RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache
     Compression'
