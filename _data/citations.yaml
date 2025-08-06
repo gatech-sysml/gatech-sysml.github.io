@@ -401,7 +401,7 @@
   - Alexey Tumanov
   publisher: ACM SIGOPS Operating Systems Review, Volume 59, Issue 2
   date: '2025-07-01'
-  link: https://dl.acm.org/newsletter/sigops
+  link: https://dl.acm.org/doi/pdf/10.1145/3759441.3759448
   image: images/publication_thumbnails/empiric.png
   plugin: sources.py
   file: sources.yaml
@@ -417,7 +417,7 @@
   - Ramachandran Ramjee
   publisher: ACM SIGOPS Operating Systems Review, Volume 59, Issue 2
   date: '2025-07-01'
-  link: https://dl.acm.org/newsletter/sigops
+  link: https://dl.acm.org/doi/pdf/10.1145/3759441.3759444
   image: images/publication_thumbnails/chunked-prefills.png
   plugin: sources.py
   file: sources.yaml
@@ -430,7 +430,7 @@
   - Alexey Tumanov
   publisher: ACM SIGOPS Operating Systems Review, Volume 59, Issue 2
   date: '2025-07-01'
-  link: https://dl.acm.org/newsletter/sigops
+  link: https://dl.acm.org/doi/pdf/10.1145/3759441.3759447
   image: images/publication_thumbnails/weight-sharing.png
   plugin: sources.py
   file: sources.yaml
