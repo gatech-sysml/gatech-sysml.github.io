@@ -114,3 +114,39 @@
   publisher: "Proc. of 2nd Architecture, Compiler, and System Support for Multi-model DNN Workloads Workshop"
   date: "2022-06-01"
   image: images/publication_thumbnails/isca_22.png
+- title: "EMPIRIC: Exploring Missing Pieces in KV Cache Compression for Reducing Computation, Storage, and Latency in Long-Context LLM Inference"
+  authors:
+    - Payman Behnam
+    - Yaosheng Fu
+    - Ritchie Zhao
+    - Po-An Tsai
+    - Zhiding Yu
+    - Alexey Tumanov
+  publisher: "ACM SIGOPS Operating Systems Review, Volume 59, Issue 2"
+  date: "2025-07-01"
+  link: https://dl.acm.org/newsletter/sigops
+  image: images/publication_thumbnails/empiric.png
+- title: "Efficient LLM Inference via Chunked Prefills"
+  authors:
+    - Amey Agrawal
+    - Nitin Kedia
+    - Ashish Panwar
+    - Jayashree Mohan
+    - Nipun Kwatra
+    - Bhargav S. Gulavani
+    - Alexey Tumanov
+    - Ramachandran Ramjee
+  publisher: "ACM SIGOPS Operating Systems Review, Volume 59, Issue 2"
+  date: "2025-07-01"
+  link: https://dl.acm.org/newsletter/sigops
+  image: images/publication_thumbnails/chunked-prefills.png
+- title: "Toward Weight Sharing Paradigm for Efficient AI: Training and Inference Serving"
+  authors:
+    - Payman Behnam
+    - Alind Khare
+    - Dhruv Garg
+    - Alexey Tumanov
+  publisher: "ACM SIGOPS Operating Systems Review, Volume 59, Issue 2"
+  date: "2025-07-01"
+  link: https://dl.acm.org/newsletter/sigops
+  image: images/publication_thumbnails/weight-sharing.png

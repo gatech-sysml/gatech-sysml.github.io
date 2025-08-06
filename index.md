@@ -5,6 +5,7 @@ The System for AI Lab (SAIL) at Georgia Tech, led by Prof. Alexey Tumanov, speci
 
 # Recent News
 
+- 🎉 Congratulations to Payman Behnam, Amey Agrawal, Alind Khare, and Dhruv Garg! Three papers accepted at ACM SIGOPS Operating Systems Review, July 2025.
 - We are looking for contributors for our new inference engine [Vajra](https://project-vajra.github.io/). ⚡️
 - Our papers on common anti-patterns in LLm Inference systems evaluations is now on [Arxiv](https://arxiv.org/pdf/2507.09019).
 - Prof. Tumanov recognized with the Spring [2025 CIOS Honor Roll](https://blog.ctl.gatech.edu/2025/06/11/spring-2025-honor-roll/) - third semester in a row.
