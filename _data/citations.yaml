@@ -14,7 +14,7 @@
   publisher: arXiv
   date: '2025-07-15'
   link: https://arxiv.org/abs/2507.09019
-  image: images/publication_thumbnails/eval-checklist
+  image: images/publication_thumbnails/eval-checklist.png
   plugin: sources.py
   file: sources.yaml
 - id: arxiv:2502.14051
