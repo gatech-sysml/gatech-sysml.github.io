@@ -434,3 +434,32 @@
   image: images/publication_thumbnails/weight-sharing.png
   plugin: sources.py
   file: sources.yaml
+- id: superserve-nsdi25
+  title: "SuperServe: Fine-Grained Inference Serving for Unpredictable Workloads"
+  authors:
+    - Alind Khare
+    - Dhruv Garg
+    - Sukrit Kalra
+    - Snigdha Grandhi
+    - Ion Stoica
+    - Alexey Tumanov
+  publisher: 22nd USENIX Symposium on Networked Systems Design and Implementation (NSDI 2025)
+  date: '2025-04-28'
+  link: https://www.usenix.org/conference/nsdi25/presentation/khare
+  image: images/publication_thumbnails/superserve_arch.png
+  plugin: sources.py
+  file: sources.yaml
+- id: client-availability-euromlsys25
+  title: "Client Availability in Federated Learning: It Matters!"
+  authors:
+    - Dhruv Garg
+    - Debopam Sanyal
+    - Myungjin Lee
+    - Alexey Tumanov
+    - Ada Gavrilovska
+  publisher: 5th Workshop on Machine Learning and Systems (EuroMLSys), co-located with EuroSys '25
+  date: '2025-03-31'
+  link: https://euromlsys.eu/pdf/euromlsys25-42.pdf
+  image: images/publication_thumbnails/fl_avail_matters.png
+  plugin: sources.py
+  file: sources.yaml
