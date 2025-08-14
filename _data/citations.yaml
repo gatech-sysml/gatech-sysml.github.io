@@ -434,8 +434,7 @@
   image: images/publication_thumbnails/weight-sharing.png
   plugin: sources.py
   file: sources.yaml
-- id: superserve-nsdi25
-  title: "SuperServe: Fine-Grained Inference Serving for Unpredictable Workloads"
+- title: "SuperServe: Fine-Grained Inference Serving for Unpredictable Workloads"
   authors:
     - Alind Khare
     - Dhruv Garg
@@ -449,7 +448,7 @@
   image: images/publication_thumbnails/superserve_arch.png
   plugin: sources.py
   file: sources.yaml
-- id: client-availability-euromlsys25
+- id: doi:10.1145/3721146.3721964
   title: "Client Availability in Federated Learning: It Matters!"
   authors:
     - Dhruv Garg

@@ -74,7 +74,7 @@
     - Saibal Mukhopadhyay
   publisher: "Proc. 38'th IEEE International Parallel and Distributed Processing Symposium (IPDPS'24)"
   image: images/publication_thumbnails/harmonica.png
-- id: superserve-nsdi25
+- title: "SuperServe: Fine-Grained Inference Serving for Unpredictable Workloads"
   image: images/publication_thumbnails/superserve_arch.png
   publisher: "22nd USENIX Symposium on Networked Systems Design and Implementation (NSDI 2025)"
   buttons:
@@ -82,6 +82,12 @@
       link: https://www.youtube.com/watch?v=rErbqtM7Lvc
     - type: paper
       link: https://www.usenix.org/conference/nsdi25/presentation/khare
+- id: doi:10.1145/3721146.3721964
+  image: images/publication_thumbnails/fl_avail_matters.png
+  publisher: "5th Workshop on Machine Learning and Systems (EuroMLSys), co-located with EuroSys '25"
+  buttons:
+    - type: paper
+      link: https://euromlsys.eu/pdf/euromlsys25-42.pdf
 - title: "TransEHR: Self-Supervised Transformer for Clinical Time Series Data" # TransEHR
   authors:
     - Yanbo Xu
@@ -94,12 +100,6 @@
   image: images/publication_thumbnails/transehr.png
 - id: arxiv:2310.15938 # abkd
   image: images/publication_thumbnails/abkd.png
-- id: client-availability-euromlsys25
-  image: images/publication_thumbnails/fl_avail_matters.png
-  publisher: "5th Workshop on Machine Learning and Systems (EuroMLSys), co-located with EuroSys '25"
-  buttons:
-    - type: paper
-      link: https://euromlsys.eu/pdf/euromlsys25-42.pdf
 - title: "Signed-Binarization: Unlocking Efficiency Through Repetition-Sparsity Trade-Off"
   authors:
     - Sachit Kuhar
