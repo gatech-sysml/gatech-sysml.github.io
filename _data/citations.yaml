@@ -299,20 +299,34 @@
   image: images/publication_thumbnails/harmonica.png
   plugin: sources.py
   file: sources.yaml
-- id: arxiv:2312.16733
-  title: 'SuperServe: Fine-Grained Inference Serving for Unpredictable Workloads'
-  authors:
-  - Alind Khare
-  - Dhruv Garg
-  - Sukrit Kalra
-  - Snigdha Grandhi
-  - Ion Stoica
-  - Alexey Tumanov
+- title: 'SuperServe: Fine-Grained Inference Serving for Unpredictable Workloads'
+  image: images/publication_thumbnails/superserve_arch.png
   publisher: 22nd USENIX Symposium on Networked Systems Design and Implementation
-    (NSDI'25), Philadelphia, USA, 2025.
-  date: '2023-12-29'
-  link: https://arxiv.org/abs/2312.16733
-  image: images/publication_thumbnails/superserve.png
+    (NSDI 2025)
+  date: '2025-04-28'
+  buttons:
+  - type: video
+    link: https://www.youtube.com/watch?v=rErbqtM7Lvc
+  - type: paper
+    link: https://www.usenix.org/conference/nsdi25/presentation/khare
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1145/3721146.3721964
+  title: 'Client Availability in Federated Learning: It Matters!'
+  authors:
+  - Dhruv Garg
+  - Debopam Sanyal
+  - Myungjin Lee
+  - Alexey Tumanov
+  - Ada Gavrilovska
+  publisher: 5th Workshop on Machine Learning and Systems (EuroMLSys), co-located
+    with EuroSys '25
+  date: '2025-03-30'
+  link: https://doi.org/g9w3z6
+  image: images/publication_thumbnails/fl_avail_matters.png
+  buttons:
+  - type: paper
+    link: https://euromlsys.eu/pdf/euromlsys25-42.pdf
   plugin: sources.py
   file: sources.yaml
 - title: 'TransEHR: Self-Supervised Transformer for Clinical Time Series Data'
