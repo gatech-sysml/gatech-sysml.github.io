@@ -75,6 +75,13 @@
   publisher: "Proc. 38'th IEEE International Parallel and Distributed Processing Symposium (IPDPS'24)"
   image: images/publication_thumbnails/harmonica.png
 - title: "SuperServe: Fine-Grained Inference Serving for Unpredictable Workloads"
+  authors:
+    - Alind Khare
+    - Dhruv Garg
+    - Sukrit Kalra
+    - Snigdha Grandhi
+    - Ion Stoica
+    - Alexey Tumanov
   image: images/publication_thumbnails/superserve_arch.png
   publisher: "22nd USENIX Symposium on Networked Systems Design and Implementation (NSDI 2025)"
   date: "2025-04-28"
