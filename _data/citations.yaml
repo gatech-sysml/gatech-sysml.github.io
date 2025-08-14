@@ -303,8 +303,6 @@
   image: images/publication_thumbnails/superserve_arch.png
   publisher: 22nd USENIX Symposium on Networked Systems Design and Implementation
     (NSDI 2025)
-  date: '2025-04-28'
-  link: https://www.usenix.org/conference/nsdi25/presentation/khare
   buttons:
   - type: video
     link: https://www.youtube.com/watch?v=rErbqtM7Lvc
