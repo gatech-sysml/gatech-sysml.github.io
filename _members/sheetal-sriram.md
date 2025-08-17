@@ -1,6 +1,6 @@
 ---
 name: Sheetal Sriram
-image: https://drive.google.com/uc?export=view&id=13i-c4-blQR3Khug8z3E2Wb2i9Dn1qXJM
+image: https://drive.google.com/thumbnail?id=1tqDa2qEuYVa0Un4xHyqaRX5UiQngkrku&sz=w1000
 role: masters
 links:
   home-page: https://www.linkedin.com/in/sheetals01/
