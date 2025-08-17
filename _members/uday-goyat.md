@@ -1,6 +1,6 @@
 ---
 name: Uday Goyat
-image: https://udaygoyat45.github.io/assets/portrait_cropped.png
+image: https://udaygoyat45.github.io/assets/portrait.png
 role: masters
 links:
   home-page: https://udaygoyat45.github.io
