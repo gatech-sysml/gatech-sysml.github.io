@@ -1,6 +1,6 @@
 ---
 name: Garv Ghai
-image: https://drive.google.com/uc?export=view&id=1U67O1LaAYczUWzsYo5SE1F6Thsa5MKrk
+image: https://drive.google.com/thumbnail?id=1U67O1LaAYczUWzsYo5SE1F6Thsa5MKrk&sz=w1000
 role: masters
 links:
   home-page: https://www.linkedin.com/in/garv-ghai/
