@@ -1,6 +1,6 @@
 ---
 name: Sarika Singh
-image: https://drive.google.com/file/d/1udauZ3RKfoTcY3U3IhJs0R9Uqq97cyoy/view?usp=sharing
+image: https://drive.google.com/thumbnail?id=1udauZ3RKfoTcY3U3IhJs0R9Uqq97cyoy&sz=w1000
 role: masters
 links:
   home-page: https://www.linkedin.com/in/sarikasingh00/
