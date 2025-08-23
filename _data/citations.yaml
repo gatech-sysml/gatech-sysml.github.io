@@ -17,6 +17,26 @@
   image: images/publication_thumbnails/eval-checklist.png
   plugin: sources.py
   file: sources.yaml
+- id: arxiv:2503.20191
+  title: 'Maya: Optimizing Deep Learning Training Workloads using Emulated Virtual
+    Accelerators'
+  authors:
+  - Srihas Yarlagadda
+  - Amey Agrawal
+  - Elton Pinto
+  - Hakesh Darapaneni
+  - Mitali Meratwal
+  - Shivam Mittal
+  - Pranavi Bajjuri
+  - Srinivas Sridharan
+  - Alexey Tumanov
+  publisher: 21st European Conference on Computer Systems (EuroSys 2026), Edinburgh,
+    April 2026
+  date: '2025-03-27'
+  link: https://arxiv.org/abs/2503.20191
+  image: images/publication_thumbnails/maya.png
+  plugin: sources.py
+  file: sources.yaml
 - id: arxiv:2502.14051
   title: 'RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache
     Compression'
@@ -27,8 +47,7 @@
   - Po-An Tsai
   - Zhiding Yu
   - Alexey Tumanov
-  publisher: 21st European Conference on Computer Systems (EuroSys 2026), Edinburgh,
-    April 2026
+  publisher: arXiv
   date: '2025-02-21'
   link: https://arxiv.org/abs/2502.14051
   image: images/publication_thumbnails/rocketkv.png
