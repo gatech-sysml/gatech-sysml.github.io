@@ -5,6 +5,7 @@ The System for AI Lab (SAIL) at Georgia Tech, led by Prof. Alexey Tumanov, speci
 
 # Recent News
 
+- Our paper on GPU cluster emulation, [Maya](https://arxiv.org/pdf/2503.20191) has been accepted at EuroSys'26! 
 - 🎉 Congratulations to Payman Behnam, Amey Agrawal, Alind Khare, and Dhruv Garg! Three papers accepted at ACM SIGOPS Operating Systems Review, July 2025.
 - We are looking for contributors for our new inference engine [Vajra](https://project-vajra.github.io/). ⚡️
 - Our papers on common anti-patterns in LLm Inference systems evaluations is now on [Arxiv](https://arxiv.org/pdf/2507.09019).

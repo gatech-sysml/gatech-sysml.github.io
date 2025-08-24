@@ -1,7 +1,7 @@
 ---
 name: Chus Antonanzas
 image: https://chus.space/static/me.jpg
-role: masters
+role: masters-alumni
 aliases:
   - Chus Antonanzas
   - Jesus M. Antonanzas

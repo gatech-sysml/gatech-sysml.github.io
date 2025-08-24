@@ -1,6 +1,7 @@
 - id: arxiv:2507.09019 # on evaluating llm inf..
   image: images/publication_thumbnails/eval-checklist.png
-- id: arxiv:2502.14051 # maya
+- id: arxiv:2503.20191 # maya
+  publisher: "21st European Conference on Computer Systems (EuroSys 2026), Edinburgh, April 2026"
   image: images/publication_thumbnails/maya.png
 - id: arxiv:2502.14051 # rocketkv
   image: images/publication_thumbnails/rocketkv.png
