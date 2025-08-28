@@ -1,6 +1,6 @@
 ---
 name: Faisal Baig
-image: https://github.com/user-attachments/assets/5a5ac1c5-ff5c-4236-957b-e7573960b341
+image: https://faisab.github.io/assets/img/pfp2.jpg
 role: masters
 links:
   home-page: https://www.linkedin.com/in/baig-faisal/
