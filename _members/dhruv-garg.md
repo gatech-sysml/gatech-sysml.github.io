@@ -1,9 +1,12 @@
 ---
 name: Dhruv Garg
-image: https://media.licdn.com/dms/image/D5603AQEZtG7sR73iBg/profile-displayphoto-shrink_400_400/0/1685509104851?e=1715817600&v=beta&t=KRbmujzSe8bwmVkfkooDKnXZzLnaY3qP_WGlzRMpRNU
+image: https://dhruvsgarg.github.io/images/profile.png
 role: phd
 links:
-  home-page: https://www.linkedin.com/in/dhruvsgarg/
+  home-page: https://dhruvsgarg.github.io/
 ---
 
-CS Grad specializing in Computing Systems.
+Hi — I'm Dhruv Garg, a third year PhD student in Computer Science at Georgia
+Tech. I am advised by Prof. Alexey Tumanov and Prof. Ada Gavrilovska.
+
+My research focuses on two parts of Systems for Machine Learning. These include Efficient ML Model Serving and Robust Federated Learning.
