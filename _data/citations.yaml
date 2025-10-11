@@ -28,7 +28,7 @@
   - Zhiding Yu
   - Alexey Tumanov
   publisher: arXiv
-  date: '2025-02-21'
+  date: '2025-08-14'
   link: https://arxiv.org/abs/2502.14051
   image: images/publication_thumbnails/rocketkv.png
   plugin: sources.py
@@ -40,20 +40,20 @@
   - Amey Agrawal
   - Haoran Qiu
   - Junda Chen
-  - "\xCD\xF1igo Goiri"
+  - "\xC3\x8D\xC3\xB1igo Goiri"
   - Chaojie Zhang
   - Rayyan Shahid
   - Ramachandran Ramjee
   - Alexey Tumanov
   - Esha Choukse
   publisher: arXiv
-  date: '2025-05-12'
+  date: '2025-06-23'
   link: https://arxiv.org/abs/2409.17264
   image: images/publication_thumbnails/medha.png
   plugin: sources.py
   file: sources.yaml
 - id: arxiv:2407.06167
-  title: 'D{\epsilon}pS: Delayed {\epsilon}-Shrinking for Faster Once-For-All Training'
+  title: "D\xCE\xB5pS: Delayed \xCE\xB5-Shrinking for Faster Once-For-All Training"
   authors:
   - Aditya Annavajjala
   - Alind Khare
@@ -349,16 +349,18 @@
   plugin: sources.py
   file: sources.yaml
 - id: arxiv:2310.15938
-  title: 'ABKD: Graph Neural Network Compression with Attention-Based Knowledge Distillation'
+  title: 'STRIDE: Structure and Embedding Distillation with Attention for Graph Neural
+    Networks'
   authors:
   - Anshul Ahluwalia
-  - Rohit Das
   - Payman Behnam
+  - Rohit Das
   - Alind Khare
+  - Biswadeep Chakraborty
   - Pan Li
   - Alexey Tumanov
   publisher: arXiv
-  date: '2023-10-25'
+  date: '2025-08-19'
   link: https://arxiv.org/abs/2310.15938
   image: images/publication_thumbnails/abkd.png
   plugin: sources.py
