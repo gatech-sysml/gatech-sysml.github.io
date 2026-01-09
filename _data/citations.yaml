@@ -1,5 +1,26 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
+- id: arxiv:2601.00397
+  title: 'Revati: Transparent GPU-Free Time-Warp Emulation for LLM Serving'
+  authors:
+  - Amey Agrawal
+  - Mayank Yadav
+  - Sukrit Kumar
+  - Anirudha Agrawal
+  - Garv Ghai
+  - Souradeep Bera
+  - Elton Pinto
+  - Sirish Gambhira
+  - Mohammad Adain
+  - Kasra Sohrab
+  - Chus Antonanzas
+  - Alexey Tumanov
+  publisher: arXiv
+  date: '2026-01-05'
+  link: https://arxiv.org/abs/2601.00397
+  image: images/publication_thumbnails/revati.png
+  plugin: sources.py
+  file: sources.yaml
 - id: arxiv:2507.09019
   title: On Evaluating Performance of LLM Inference Serving Systems
   authors:
@@ -27,15 +48,15 @@
   - Po-An Tsai
   - Zhiding Yu
   - Alexey Tumanov
-  publisher: arXiv
+  publisher: 21st European Conference on Computer Systems, 2026, Edinburgh
   date: '2025-08-14'
   link: https://arxiv.org/abs/2502.14051
   image: images/publication_thumbnails/rocketkv.png
   plugin: sources.py
   file: sources.yaml
 - id: arxiv:2409.17264
-  title: 'Medha: Efficiently Serving Multi-Million Context Length LLM Inference Requests
-    Without Approximations'
+  title: 'No Request Left Behind: Tackling Heterogeneity in Long-Context LLM Inference
+    with Medha'
   authors:
   - Amey Agrawal
   - Haoran Qiu
@@ -47,7 +68,7 @@
   - Alexey Tumanov
   - Esha Choukse
   publisher: arXiv
-  date: '2025-06-23'
+  date: '2025-11-27'
   link: https://arxiv.org/abs/2409.17264
   image: images/publication_thumbnails/medha.png
   plugin: sources.py
