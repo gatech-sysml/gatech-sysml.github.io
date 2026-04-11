@@ -14,7 +14,7 @@ scheduler fairness, memory pressure, and even the fleet size you think you
 need. This post shows how to model those workloads and benchmark them
 reproducibly.
 
-Experiment setup, results, OpenClaw telemetry, sessions and more are also
+Experiment setup, results, OpenClaw telemetry, sessions and more are
 available in the
 [GitHub repo](https://github.com/chus-chus/blogpost_agentic_workloads).
 
