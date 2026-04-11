@@ -627,7 +627,7 @@ starting point. Thank you for reading.
 
 ### Acknowledgements
 
-I'd like to thank Souradeep Bera and Elton Pinto for their useful suggestions to this post, and the whole Vajra-Project team for their support and contributions to the development of Veeksha.
+I’d like to thank Souradeep Bera and Elton Pinto for their helpful feedback on this post, as well as the entire Vajra Project team for their support and contributions to Veeksha’s development.
 
 ## Notes
 
