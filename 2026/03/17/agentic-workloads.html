@@ -1,4 +1,475 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://gatech-sysml.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://gatech-sysml.github.io/" rel="alternate" type="text/html" /><updated>2026-04-12T14:21:10+00:00</updated><id>https://gatech-sysml.github.io/feed.xml</id><title type="html">Systems for AI Lab</title><subtitle>The System for AI Lab (SAIL) at Georgia Tech, led by Prof. Alexey Tumanov, specializes in advancing systems support and resource management for machine learning (ML) to democratize large-scale AI systems. Our research encompasses the entire AI infrastructure stack, from foundational system design to the development of efficient ML training and inference algorithms. By focusing on managing the complete ML lifecycle, SAIL aims to enhance accessibility and efficiency in AI technologies.</subtitle><entry><title type="html">Agentic Workloads for Inference Evaluation</title><link href="https://gatech-sysml.github.io/2026/03/17/agentic-workloads.html" rel="alternate" type="text/html" title="Agentic Workloads for Inference Evaluation" /><published>2026-03-17T00:00:00+00:00</published><updated>2026-04-12T14:20:01+00:00</updated><id>https://gatech-sysml.github.io/2026/03/17/agentic-workloads</id><content type="html" xml:base="https://gatech-sysml.github.io/2026/03/17/agentic-workloads.html"><![CDATA[<p><strong>TL;DR.</strong> If your benchmark is a short chat loop, you may be measuring the
+<!DOCTYPE html>
+<html lang="en" data-dark="true">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--
+  put your analytics (e.g. Google Analytics) tracking code here
+-->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S0NN4DKE7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S0NN4DKE7J');
+</script>
+
+  <!--
+  put your search engine verification (e.g. Google Search Console) tag here
+-->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Agentic Workloads for Inference Evaluation | Systems for AI Lab</title>
+
+<link rel="icon" href="/images/icon.png">
+
+<meta name="title" content="Agentic Workloads for Inference Evaluation">
+<meta name="description" content="Georgia Tech. Why simple chat benchmarks are not enough for inference performance evaluation, and how to model agentic workloads with branching, prefix reuse, bursty timing, token heterogeneity, and reproducible synthetic sessions.">
+
+<meta property="og:title" content="Agentic Workloads for Inference Evaluation">
+<meta property="og:site_title" content="Systems for AI Lab">
+<meta property="og:description" content="Georgia Tech. Why simple chat benchmarks are not enough for inference performance evaluation, and how to model agentic workloads with branching, prefix reuse, bursty timing, token heterogeneity, and reproducible synthetic sessions.">
+<meta property="og:url" content="https://gatech-sysml.github.io">
+<meta property="og:image" content="/images/share.jpg">
+<meta property="og:locale" content="en_US">
+
+<meta property="twitter:title" content="Agentic Workloads for Inference Evaluation">
+<meta property="twitter:description" content="Georgia Tech. Why simple chat benchmarks are not enough for inference performance evaluation, and how to model agentic workloads with branching, prefix reuse, bursty timing, token heterogeneity, and reproducible synthetic sessions.">
+<meta property="twitter:url" content="https://gatech-sysml.github.io">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="/images/share.jpg">
+
+
+  <meta property="og:type" content="website">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "WebSite",
+    
+    "name": "Agentic Workloads for Inference Evaluation",
+    "description": "Georgia Tech. Why simple chat benchmarks are not enough for inference performance evaluation, and how to model agentic workloads with branching, prefix reuse, bursty timing, token heterogeneity, and reproducible synthetic sessions.",
+    "headline": "Agentic Workloads for Inference Evaluation",
+    "publisher": {
+      "@type": "Organization",
+      "logo": { "@type": "ImageObject", "url": "/images/icon.png" }
+    },
+    "url": "https://gatech-sysml.github.io"
+  }
+</script>
+
+<link rel="alternate" type="application/rss+xml" href="https://gatech-sysml.github.io/feed.xml">
+
+  <!-- Google Fonts -->
+<!-- automatically get url from fonts used in theme file -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?display=swap&&family=Barlow:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;family=Roboto+Mono:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600" rel="stylesheet">
+
+<!-- Font Awesome icons (load asynchronously due to size) -->
+
+<link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet" media="none" onload="this.removeAttribute('media'); this.onload = null;">
+<noscript>
+  <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
+</noscript>
+
+  <!-- third party styles -->
+<!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
+<link href="https://cdn.jsdelivr.net/gh/StylishThemes/Syntax-Themes/pygments/css-github/pygments-tomorrow-night-eighties.css" rel="stylesheet">
+
+<!-- include all sass in styles folder -->
+
+
+  
+    <link href="/_styles/-theme.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/alert.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/all.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/anchor.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/background.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/body.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/bold.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/button.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/card.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/checkbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/citation.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/code.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/cols.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/dark-toggle.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/feature.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/figure.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/float.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/font.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/footer.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/form.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/grid.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/header.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/heading.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/highlight.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/icon.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/image.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/link.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/list.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/main.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/paragraph.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/portrait.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/post-excerpt.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/post-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/post-nav.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/quote.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/rule.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/search-box.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/search-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/section.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/table.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/tags.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/textbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/tooltip.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/util.css" rel="stylesheet">
+  
+
+
+<!-- include all css in styles folder -->
+
+
+
+  <!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/_scripts/anchors.js"></script>
+
+  <script src="/_scripts/dark-mode.js"></script>
+
+  <script src="/_scripts/fetch-tags.js"></script>
+
+  <script src="/_scripts/search.js"></script>
+
+  <script src="/_scripts/site-search.js"></script>
+
+  <script src="/_scripts/table-wrap.js"></script>
+
+  <script src="/_scripts/tooltip.js"></script>
+
+
+</head>
+
+  <body>
+    
+
+
+
+
+
+
+
+<header class="background" style="--image: url('/images/background.jpeg')" data-dark="true">
+  <a href="/" class="home">
+    
+      <span class="logo">
+        
+          <svg width="280" height="280" viewbox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M145.72 198.266C116.304 240.943 50.0917 270.831 27.7682 280C30.5432 277.648 72.1133 241.816 83.3688 209.083C95.2138 174.646 96.689 160.251 78.7401 121.743C58.3935 78.0945 6.07179 8.50722 0 6.23391e-06C26.9845 17.7046 83.9361 49.9954 110.543 75.9959C137.716 102.546 154.443 132.476 156.43 158.124C157.575 172.787 153.967 186.294 145.72 198.266Z" fill="#6F00FF"></path>
+<path d="M220.834 152.743C221.011 168.194 214.506 184.517 200.609 200.04C176.616 226.843 139.458 239.989 105.389 251.023C129.243 236.501 139.018 227.139 154.814 204.237C164.948 189.533 167.798 175.166 166.376 156.884C163.279 117.01 133.887 82.7983 116.637 65.9529C98.5215 48.2483 85.7297 38.3383 58.0792 19.2252C58.1358 19.2393 163.735 64.7557 196.147 100.63C212.343 118.56 220.645 136.095 220.834 152.743Z" fill="#9A4DFF"></path>
+<path d="M206.215 210.689C206.614 210.266 207.004 209.801 207.392 209.35C223.154 190.871 231.045 171.758 230.825 152.561C230.591 131.87 221.4 111.757 202.719 91.0805C188.343 75.1788 166.277 59.2066 141.857 44.4176C172.637 56.9671 202.752 70.3899 225.851 83.0803C322.466 136.194 273.304 168.843 206.215 210.689Z" fill="#C599FF"></path>
+</svg>
+
+        
+      </span>
+    
+    
+      <span class="title-text" data-tooltip="Home">
+        
+          <span class="title">Systems for AI Lab</span>
+        
+        
+          <span class="subtitle">Georgia Tech</span>
+        
+      </span>
+    
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <nav>
+    
+    
+      
+        <a href="/research/" data-tooltip="Published works">
+          Research
+        </a>
+      
+    
+      
+        <a href="/team/" data-tooltip="About our team">
+          Team
+        </a>
+      
+    
+      
+        <a href="/blog/" data-tooltip="Musings and miscellany">
+          Blog
+        </a>
+      
+    
+  </nav>
+</header>
+
+    <main>
+      <!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - filter out blank sections
+-->
+
+
+
+
+
+
+  
+  
+  
+
+  <section class="background" data-size="1" style="--image: url('/images/posts/agentic-workloads/header.png')">
+    <!--
+  background: /images/posts/agentic-workloads/header.png;
+  dark: ;
+  size: 1;
+-->
+
+
+<h1 class="center">Agentic Workloads for Inference Evaluation</h1>
+
+<div class="post-info">
+  
+    
+    
+      
+
+<div class="portrait-wrapper">
+  <a href="/members/chus-antonanzas.html" class="portrait" data-style="tiny" aria-label="Chus Antonanzas">
+    <img src="https://chus.space/static/me.jpg" class="portrait-image" alt="member portrait" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+
+    
+      <span class="portrait-text">
+        
+          <span class="portrait-name">
+            Chus Antonanzas
+          </span>
+        
+
+        
+          <span class="portrait-role">
+            
+            <i class="icon fa-solid fa-user-graduate"></i>
+            <span>Masters Student</span>
+          </span>
+        
+      </span>
+    
+  </a>
+</div>
+
+    
+  
+
+  
+  
+
+  
+    <span data-tooltip="Originally published on">
+      <i class="icon fa-regular fa-calendar"></i>
+      <span>March 17, 2026</span>
+    </span>
+  
+
+  
+    <span data-tooltip="Last updated on">
+      <i class="icon fa-solid fa-clock-rotate-left"></i>
+      <span>April 12, 2026</span>
+    </span>
+  
+</div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  background: ;
+  dark: ;
+  size: ;
+-->
+
+
+<p><strong>TL;DR.</strong> If your benchmark is a short chat loop, you may be measuring the
 wrong workload regime. Agentic workloads turn one task into long-lived, branching,
 bursty sessions with heavy prefix reuse, which reshapes cache behavior,
 scheduler fairness, memory pressure, and even the fleet size you think you
@@ -52,9 +523,12 @@ conclusions might cost real money.</p>
 <p>So, when we want to fully evaluate the performance of an inference system, we do not just want to test it against the simple, traditional workloads, but also against agentic ones. Naively, one might think: just run OpenClaw against the inference system, give it some tasks, measure the timings. This does not work for rigorous evaluation, though:</p>
 
 <ul>
-  <li><strong>Reproducibility.</strong> LLM outputs are non-deterministic. The same task produces different tool-call sequences on different runs. The workload itself changes between experiments, making A/B comparisons impossible.</li>
-  <li><strong>Control.</strong> It is hard to isolate variables. It is also hard to test scenarios that deviate from the simplest case, like what happens when fan-out increases from 2 to 8, or when think time between requests grows. With a real agent, you cannot control that. With a benchmark framework you can just change a parameter.</li>
-  <li><strong>Instrumentation.</strong> A benchmark framework measures time to first token, time between tokens, cache hit rates, etc. at the right granularity, without instrumenting someone else’s code.</li>
+  <li>
+<strong>Reproducibility.</strong> LLM outputs are non-deterministic. The same task produces different tool-call sequences on different runs. The workload itself changes between experiments, making A/B comparisons impossible.</li>
+  <li>
+<strong>Control.</strong> It is hard to isolate variables. It is also hard to test scenarios that deviate from the simplest case, like what happens when fan-out increases from 2 to 8, or when think time between requests grows. With a real agent, you cannot control that. With a benchmark framework you can just change a parameter.</li>
+  <li>
+<strong>Instrumentation.</strong> A benchmark framework measures time to first token, time between tokens, cache hit rates, etc. at the right granularity, without instrumenting someone else’s code.</li>
 </ul>
 
 <p>What we want is to replicate the <em>shape</em> of agentic workloads: the structure,
@@ -111,11 +585,16 @@ All optimizations on top of this, like advanced KV-cache policies, chunking, pre
 and decodes across a workload.<sup id="note-ref-3"><a href="#note-3">3</a></sup> The core metrics are:</p>
 
 <ul>
-  <li><strong>TTFT</strong>: time to first token. How long until the first output token arrives after submitting a request. Measures prefill speed.</li>
-  <li><strong>TBT</strong>: time between tokens. The interval between consecutive output tokens. Measures decode speed.</li>
-  <li><strong>TPOT</strong>: time per output token. Mean TBT across a request.</li>
-  <li><strong>E2E latency</strong>: total time from request submission to last output token.</li>
-  <li><strong>Throughput (token or request)</strong>: it may mean system-level tokens/s or requests/s. Some also quote a per-request token rate. In this post I name the specific quantity each time.</li>
+  <li>
+<strong>TTFT</strong>: time to first token. How long until the first output token arrives after submitting a request. Measures prefill speed.</li>
+  <li>
+<strong>TBT</strong>: time between tokens. The interval between consecutive output tokens. Measures decode speed.</li>
+  <li>
+<strong>TPOT</strong>: time per output token. Mean TBT across a request.</li>
+  <li>
+<strong>E2E latency</strong>: total time from request submission to last output token.</li>
+  <li>
+<strong>Throughput (token or request)</strong>: it may mean system-level tokens/s or requests/s. Some also quote a per-request token rate. In this post I name the specific quantity each time.</li>
 </ul>
 
 <p>Everything else, like cost per token or energy per token, derives from these plus
@@ -266,7 +745,7 @@ but that request <code class="language-plaintext highlighter-rouge">N</code> and
     <img src="/images/posts/agentic-workloads/context_growth_over_turns_opaque.png" style="
         width: 760px;
         max-height: unset;
-      " alt="Illustrative context growth over turns. For a single user intervention at turn 1, context grows until +250k. Model output, tool results and other events are accumulated in history, accounting for the majority of the context." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      " alt="Illustrative context growth over turns. For a single user intervention at turn 1, context grows until +250k. Model output, tool results and other events are accumulated in history, accounting for the majority of the context." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -308,7 +787,8 @@ from it. The goal here is to establish the basic prefix-reuse regime
 that the later case studies build on.</p>
 
 <ol>
-  <li>First, I ask OpenClaw 26.3.2 with GPT-5.1-Codex-Mini to implement a web app for interactive exploration of LLMs via interpretability methods. We cap the total inference time to about 15 minutes.<sup id="note-ref-10"><a href="#note-10">10</a></sup></li>
+  <li>First, I ask OpenClaw 26.3.2 with GPT-5.1-Codex-Mini to implement a web app for interactive exploration of LLMs via interpretability methods. We cap the total inference time to about 15 minutes.<sup id="note-ref-10"><a href="#note-10">10</a></sup>
+</li>
   <li>Then, I measure statistical properties of the resulting trace: token counts, timings, prefix reuse, etc.</li>
   <li>Next, I generate a synthetic workload from the trace that mimics the agentic pattern just described.</li>
   <li>Finally, I compare that workload with and without prefix caching.</li>
@@ -397,7 +877,7 @@ prefix cache configuration, while replica B has it disabled.</p>
     <img src="/images/posts/agentic-workloads/case_study_1_ttfc_scaling_opaque.png" style="
         width: 640px;
         max-height: unset;
-      " alt="TTFC versus total prompt tokens for the same synthetic requests (log scale on the y-axis). With the default prefix cache, median TTFC grows from roughly 60 ms to 0.33 s across the session. With prefix caching disabled, median TTFC rises from roughly 0.1 s to about 10 s by the time the prompt reaches 100k tokens." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      " alt="TTFC versus total prompt tokens for the same synthetic requests (log scale on the y-axis). With the default prefix cache, median TTFC grows from roughly 60 ms to 0.33 s across the session. With prefix caching disabled, median TTFC rises from roughly 0.1 s to about 10 s by the time the prompt reaches 100k tokens." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -443,7 +923,7 @@ number create very large bursts.</p>
     <img src="/images/posts/agentic-workloads/new_tokens_fit_p95_linear_opaque.png" style="
         width: 589px;
         max-height: unset;
-      " alt="Empirical vs fitted distributions of new input tokens for the trace in Case study 1. Cropped to the 95th percentile (the max value is around 20000 tokens). Most steps add just a few new input tokens, but a small number add very large bursts. I tested lognormal, Weibull, gamma, exponential, Pareto, normal and inverse Gaussian distributions, and found that the latter fits best." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      " alt="Empirical vs fitted distributions of new input tokens for the trace in Case study 1. Cropped to the 95th percentile (the max value is around 20000 tokens). Most steps add just a few new input tokens, but a small number add very large bursts. I tested lognormal, Weibull, gamma, exponential, Pareto, normal and inverse Gaussian distributions, and found that the latter fits best." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -461,7 +941,7 @@ the best fit for our empirical data in the multi-turn workload in Case study 1.<
     <img src="/images/posts/agentic-workloads/output_tokens_fit_p95_linear_opaque.png" style="
         width: 589px;
         max-height: unset;
-      " alt="Empirical vs fitted distributions of generated output tokens for the trace in Case study 1. Cropped to the 95th percentile (the max value is around 14000 tokens). The same family of distributions was tested here as for the input tokens, with the same best fit." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      " alt="Empirical vs fitted distributions of generated output tokens for the trace in Case study 1. Cropped to the 95th percentile (the max value is around 14000 tokens). The same family of distributions was tested here as for the input tokens, with the same best fit." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -497,8 +977,10 @@ For example, in Veeksha’s spec shown above, this means we change
 <p>Here:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">m</code> is about 815 for input tokens and about 615 for output tokens</li>
-  <li><code class="language-plaintext highlighter-rouge">s</code> is about 200 for input tokens and about 145 for output tokens</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">m</code> is about 815 for input tokens and about 615 for output tokens</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">s</code> is about 200 for input tokens and about 145 for output tokens</li>
 </ul>
 
 <p><strong>Prefix invalidation</strong></p>
@@ -550,7 +1032,7 @@ tail is heavy, with 6% being larger than 10 seconds. This effect is similar to t
     <img src="/images/posts/agentic-workloads/case-study-2-dag_opaque.png" style="
         width: 523px;
         max-height: unset;
-      " alt="A simplified DAG session. One request has a fan-out degree of 3 (subsession spawn), and one has a fan-in degree of 3 (subsessions reporting back). This is the shape used in Case studies 2 and 3." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      " alt="A simplified DAG session. One request has a fan-out degree of 3 (subsession spawn), and one has a fan-in degree of 3 (subsessions reporting back). This is the shape used in Case studies 2 and 3." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -604,7 +1086,7 @@ the 30-session linear trace at the same session arrival rate. The model and syst
     <img src="/images/posts/agentic-workloads/case_study_2_shape_ecdfs_opaque.png" style="
         width: 760px;
         max-height: unset;
-      " alt="Same total fresh tokens in the traces, different effective work under timed replay. Left: ECDF of total prompt tokens. Middle: TTFC ECDF. Right: end-to-end latency ECDF. Even though both traces have the same total new input and output tokens per full pass, the DAG workload shifts mass into the longer-context regime, moving the latency curves." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      " alt="Same total fresh tokens in the traces, different effective work under timed replay. Left: ECDF of total prompt tokens. Middle: TTFC ECDF. Right: end-to-end latency ECDF. Even though both traces have the same total new input and output tokens per full pass, the DAG workload shifts mass into the longer-context regime, moving the latency curves." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -634,7 +1116,7 @@ increases the observed TTFC.</p>
     <img src="/images/posts/agentic-workloads/case_study_2_decode_overlap_opaque.png" style="
         width: 700px;
         max-height: unset;
-      " alt="Duration-weighted decode overlap. For each x-axis value k, the y-axis shows the share of total decode time spent with at least k simultaneous decode requests. The linear run never exceeds 6 simultaneous active decodes. The DAG run reaches 41, and spends more than 60% of decode-active time at 10 or more simultaneous decode requests." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      " alt="Duration-weighted decode overlap. For each x-axis value k, the y-axis shows the share of total decode time spent with at least k simultaneous decode requests. The linear run never exceeds 6 simultaneous active decodes. The DAG run reaches 41, and spends more than 60% of decode-active time at 10 or more simultaneous decode requests." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -663,8 +1145,10 @@ all values of <code class="language-plaintext highlighter-rouge">rho</code> in t
 Session dispatch rates are thus:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">rho_l / 5</code> sessions/s for the linear workload</li>
-  <li><code class="language-plaintext highlighter-rouge">rho_d / 15</code> sessions/s for the DAG workload</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">rho_l / 5</code> sessions/s for the linear workload</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">rho_d / 15</code> sessions/s for the DAG workload</li>
 </ul>
 
 <p>I compare both deployments and show how it is possible to underprovision or overprovision when reference workloads do not match production traffic.</p>
@@ -682,7 +1166,7 @@ Session dispatch rates are thus:</p>
     <img src="/images/posts/agentic-workloads/case_study_3_frontier_metric_facets_opaque.png" style="
         width: 760px;
         max-height: unset;
-      " alt="Frontier behavior at the optimal normalized request rates `rho_l* = 5.50` and `rho_d* = 6.67`. Linear TTFC (left) is lower, consistent with its shorter context lengths. DAG has a better mid-tail distribution and reaches a similar p95 at a higher load, consistent with higher cache reuse (right)." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      " alt="Frontier behavior at the optimal normalized request rates `rho_l* = 5.50` and `rho_d* = 6.67`. Linear TTFC (left) is lower, consistent with its shorter context lengths. DAG has a better mid-tail distribution and reaches a similar p95 at a higher load, consistent with higher cache reuse (right)." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -748,36 +1232,86 @@ starting point. Thank you for reading.</p>
 <h2 id="notes">Notes</h2>
 
 <ol>
-  <li><a id="note-1"></a> For example, what are the engine’s policies for KV cache management or prefill and decode scheduling? <a href="#note-ref-1">↩</a></li>
-  <li><a id="note-2"></a> I use it not only because it is open source; it is also representative of systems with subagent spawning, parallel execution, and context management. <a href="#note-ref-2">↩</a></li>
-  <li><a id="note-3"></a> In this post I focus on text-only requests because most agentic workloads, at the time of writing, are text-only. Requests can also be multimodal, in which case the relevant metrics could change. For example, in the case of an audio response, the time to first audio matters more than just TTFT. <a href="#note-ref-3">↩</a></li>
-  <li><a id="note-4"></a> As of now, inference systems report streaming information differently, and there is not a standard way of seeing the number of output tokens in output chunks. Counting the number of tokens in a chunk accurately is not always possible due to tokenization mismatches. <a href="#note-ref-4">↩</a></li>
-  <li><a id="note-5"></a> For example, OpenClaw’s web search can call Gemini, Perplexity, or other providers. These are external requests that just look like timing gaps from our inference system’s perspective. <a href="#note-ref-5">↩</a></li>
-  <li><a id="note-6"></a> Technically, OpenClaw does not implement the agentic loop. According to the docs, it is a “… gateway for Pi agents”. So we are actually talking about Pi agents running on OpenClaw. <a href="#note-ref-6">↩</a></li>
-  <li><a id="note-7"></a> For example, subagent summaries that get injected into the parent’s context <a href="#note-ref-7">↩</a></li>
-  <li><a id="note-8"></a> Defined as the ratio of the shared consecutive tokens, from the start, to the total tokens in the input. <a href="#note-ref-8">↩</a></li>
-  <li><a id="note-9"></a> Prefix caching means reusing the KV cache computed for request <code class="language-plaintext highlighter-rouge">N</code> when processing request <code class="language-plaintext highlighter-rouge">N+1</code>. Since the shared prefix is identical, the system only needs to compute KV entries for the new tokens. This requires complex cache management. Hybrid transformer + Mamba, sparse attention, or other lower-cache-footprint models just decrease the slope of the memory requirement. <a href="#note-ref-9">↩</a></li>
-  <li><a id="note-10"></a> Note that all numbers of trace characteristics in this post are probably going to underestimate what power users and more advanced agentic harnesses generate. <a href="#note-ref-10">↩</a></li>
-  <li><a id="note-11"></a> Means 1570 and 612, inflated by a few long-context requests. <a href="#note-ref-11">↩</a></li>
-  <li><a id="note-12"></a> Veeksha can do this for a variety of trace types, like agentic ones directly from Claude Code or OpenClaw, while preserving the DAG, token, and timing distributions of the workload. <a href="#note-ref-12">↩</a></li>
-  <li><a id="note-13"></a> Should agents communicate across hierarchies? Only to their parents? Peers? <a href="#note-ref-13">↩</a></li>
-  <li><a id="note-14"></a> The workload spec, results and Veeksha config are collected in the annex below. <a href="#note-ref-14">↩</a></li>
+  <li>
+<a id="note-1"></a> For example, what are the engine’s policies for KV cache management or prefill and decode scheduling? <a href="#note-ref-1">↩</a>
+</li>
+  <li>
+<a id="note-2"></a> I use it not only because it is open source; it is also representative of systems with subagent spawning, parallel execution, and context management. <a href="#note-ref-2">↩</a>
+</li>
+  <li>
+<a id="note-3"></a> In this post I focus on text-only requests because most agentic workloads, at the time of writing, are text-only. Requests can also be multimodal, in which case the relevant metrics could change. For example, in the case of an audio response, the time to first audio matters more than just TTFT. <a href="#note-ref-3">↩</a>
+</li>
+  <li>
+<a id="note-4"></a> As of now, inference systems report streaming information differently, and there is not a standard way of seeing the number of output tokens in output chunks. Counting the number of tokens in a chunk accurately is not always possible due to tokenization mismatches. <a href="#note-ref-4">↩</a>
+</li>
+  <li>
+<a id="note-5"></a> For example, OpenClaw’s web search can call Gemini, Perplexity, or other providers. These are external requests that just look like timing gaps from our inference system’s perspective. <a href="#note-ref-5">↩</a>
+</li>
+  <li>
+<a id="note-6"></a> Technically, OpenClaw does not implement the agentic loop. According to the docs, it is a “… gateway for Pi agents”. So we are actually talking about Pi agents running on OpenClaw. <a href="#note-ref-6">↩</a>
+</li>
+  <li>
+<a id="note-7"></a> For example, subagent summaries that get injected into the parent’s context <a href="#note-ref-7">↩</a>
+</li>
+  <li>
+<a id="note-8"></a> Defined as the ratio of the shared consecutive tokens, from the start, to the total tokens in the input. <a href="#note-ref-8">↩</a>
+</li>
+  <li>
+<a id="note-9"></a> Prefix caching means reusing the KV cache computed for request <code class="language-plaintext highlighter-rouge">N</code> when processing request <code class="language-plaintext highlighter-rouge">N+1</code>. Since the shared prefix is identical, the system only needs to compute KV entries for the new tokens. This requires complex cache management. Hybrid transformer + Mamba, sparse attention, or other lower-cache-footprint models just decrease the slope of the memory requirement. <a href="#note-ref-9">↩</a>
+</li>
+  <li>
+<a id="note-10"></a> Note that all numbers of trace characteristics in this post are probably going to underestimate what power users and more advanced agentic harnesses generate. <a href="#note-ref-10">↩</a>
+</li>
+  <li>
+<a id="note-11"></a> Means 1570 and 612, inflated by a few long-context requests. <a href="#note-ref-11">↩</a>
+</li>
+  <li>
+<a id="note-12"></a> Veeksha can do this for a variety of trace types, like agentic ones directly from Claude Code or OpenClaw, while preserving the DAG, token, and timing distributions of the workload. <a href="#note-ref-12">↩</a>
+</li>
+  <li>
+<a id="note-13"></a> Should agents communicate across hierarchies? Only to their parents? Peers? <a href="#note-ref-13">↩</a>
+</li>
+  <li>
+<a id="note-14"></a> The workload spec, results and Veeksha config are collected in the annex below. <a href="#note-ref-14">↩</a>
+</li>
 </ol>
 
 <h2 id="references">References</h2>
 
 <ul>
-  <li><a id="inferencemax"></a><a href="https://inferencex.semianalysis.com">InferenceX (formerly InferenceMAX)</a></li>
-  <li><a id="artificial-analysis"></a><a href="https://artificialanalysis.ai/evaluations">Artificial Analysis Evaluations</a></li>
-  <li><a id="claude-code-subagents"></a><a href="https://docs.anthropic.com/en/docs/claude-code/subagents">Anthropic: Claude Code Docs - Create custom subagents</a></li>
-  <li><a id="openclaw-session-tools"></a><a href="https://docs.openclaw.ai/concepts/session-tool">OpenClaw Docs - Session Tools</a></li>
-  <li><a id="openclaw-subagents"></a><a href="https://docs.openclaw.ai/tools/subagents">OpenClaw Docs - Subagents</a></li>
-  <li><a id="pagedattention"></a><a href="https://arxiv.org/abs/2309.06180">Kwon et al. (2023): Efficient Memory Management for Large Language Model Serving with PagedAttention</a></li>
-  <li><a id="orca"></a><a href="https://www.usenix.org/system/files/osdi22-yu.pdf">Yu et al. (2022): Orca: A Distributed Serving System for Transformer-Based Generative Models</a></li>
-  <li><a id="distserve"></a><a href="https://openreview.net/forum?id=sNifYctwnP">Zhong et al. (2024): DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving</a></li>
-  <li><a id="sarathi-serve"></a><a href="https://arxiv.org/abs/2403.02310">Agrawal et al. (2024): Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve</a></li>
-  <li><a id="openai-streaming"></a><a href="https://platform.openai.com/docs/guides/streaming-responses">OpenAI: Streaming API responses</a></li>
-  <li><a id="vllm-prefix-caching"></a><a href="https://docs.vllm.ai/en/stable/design/prefix_caching.html">vLLM Project: Automatic Prefix Caching</a></li>
+  <li>
+<a id="inferencemax"></a><a href="https://inferencex.semianalysis.com">InferenceX (formerly InferenceMAX)</a>
+</li>
+  <li>
+<a id="artificial-analysis"></a><a href="https://artificialanalysis.ai/evaluations">Artificial Analysis Evaluations</a>
+</li>
+  <li>
+<a id="claude-code-subagents"></a><a href="https://docs.anthropic.com/en/docs/claude-code/subagents">Anthropic: Claude Code Docs - Create custom subagents</a>
+</li>
+  <li>
+<a id="openclaw-session-tools"></a><a href="https://docs.openclaw.ai/concepts/session-tool">OpenClaw Docs - Session Tools</a>
+</li>
+  <li>
+<a id="openclaw-subagents"></a><a href="https://docs.openclaw.ai/tools/subagents">OpenClaw Docs - Subagents</a>
+</li>
+  <li>
+<a id="pagedattention"></a><a href="https://arxiv.org/abs/2309.06180">Kwon et al. (2023): Efficient Memory Management for Large Language Model Serving with PagedAttention</a>
+</li>
+  <li>
+<a id="orca"></a><a href="https://www.usenix.org/system/files/osdi22-yu.pdf">Yu et al. (2022): Orca: A Distributed Serving System for Transformer-Based Generative Models</a>
+</li>
+  <li>
+<a id="distserve"></a><a href="https://openreview.net/forum?id=sNifYctwnP">Zhong et al. (2024): DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving</a>
+</li>
+  <li>
+<a id="sarathi-serve"></a><a href="https://arxiv.org/abs/2403.02310">Agrawal et al. (2024): Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve</a>
+</li>
+  <li>
+<a id="openai-streaming"></a><a href="https://platform.openai.com/docs/guides/streaming-responses">OpenAI: Streaming API responses</a>
+</li>
+  <li>
+<a id="vllm-prefix-caching"></a><a href="https://docs.vllm.ai/en/stable/design/prefix_caching.html">vLLM Project: Automatic Prefix Caching</a>
+</li>
 </ul>
 
 <h2 id="annex">Annex</h2>
@@ -787,7 +1321,7 @@ starting point. Thank you for reading.</p>
     <img src="/images/posts/agentic-workloads/branching_dag_openclaw.png" style="
         width: 650px;
         max-height: 1150px;
-      " alt="Real session structure extracted from the trace in the session-branching section. Open in a new tab for high-resolution exploration. Only 2 subagents return results because I hit rate limits quickly." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      " alt="Real session structure extracted from the trace in the session-branching section. Open in a new tab for high-resolution exploration. Only 2 subagents return results because I hit rate limits quickly." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -802,7 +1336,7 @@ starting point. Thank you for reading.</p>
     <img src="/images/posts/agentic-workloads/wait_after_ready_pareto_tail_ccdf_opaque.png" style="
         width: 680px;
         max-height: unset;
-      " alt="Empirical CDF of `wait_after_ready` for the OpenClaw trace in Case study 1, with log-log axes. The dashed line marks the 100 ms threshold used for the Pareto tail fit. We see the initial spike and the slower heavy tail." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
+      " alt="Empirical CDF of `wait_after_ready` for the OpenClaw trace in Case study 1, with log-log axes. The dashed line marks the 100 ms threshold used for the Pareto tail fit. We see the initial spike and the slower heavy tail." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -827,8 +1361,10 @@ starting point. Thank you for reading.</p>
   <tbody>
     <tr>
       <td>Shared session arrival rate</td>
-      <td><code class="language-plaintext highlighter-rouge">0.18</code> sessions/s</td>
-      <td><code class="language-plaintext highlighter-rouge">0.18</code> sessions/s</td>
+      <td>
+<code class="language-plaintext highlighter-rouge">0.18</code> sessions/s</td>
+      <td>
+<code class="language-plaintext highlighter-rouge">0.18</code> sessions/s</td>
     </tr>
     <tr>
       <td>Sessions</td>
@@ -948,7 +1484,8 @@ starting point. Thank you for reading.</p>
   </thead>
   <tbody>
     <tr>
-      <td>Max healthy normalized request rate <code class="language-plaintext highlighter-rouge">rho*</code></td>
+      <td>Max healthy normalized request rate <code class="language-plaintext highlighter-rouge">rho*</code>
+</td>
       <td><code class="language-plaintext highlighter-rouge">5.50</code></td>
       <td><code class="language-plaintext highlighter-rouge">6.67</code></td>
     </tr>
@@ -971,9 +1508,12 @@ starting point. Thank you for reading.</p>
   <thead>
     <tr>
       <th>Metric</th>
-      <th>Linear at <code class="language-plaintext highlighter-rouge">rho_l* = 5.50</code></th>
-      <th>DAG replay at <code class="language-plaintext highlighter-rouge">rho_l* = 5.50</code></th>
-      <th>DAG at <code class="language-plaintext highlighter-rouge">rho_d* = 6.67</code></th>
+      <th>Linear at <code class="language-plaintext highlighter-rouge">rho_l* = 5.50</code>
+</th>
+      <th>DAG replay at <code class="language-plaintext highlighter-rouge">rho_l* = 5.50</code>
+</th>
+      <th>DAG at <code class="language-plaintext highlighter-rouge">rho_d* = 6.67</code>
+</th>
     </tr>
   </thead>
   <tbody>
@@ -997,9 +1537,12 @@ starting point. Thank you for reading.</p>
     </tr>
     <tr>
       <td>TPOT throughput</td>
-      <td><code class="language-plaintext highlighter-rouge">35.6</code> tok/s</td>
-      <td><code class="language-plaintext highlighter-rouge">47.0</code> tok/s</td>
-      <td><code class="language-plaintext highlighter-rouge">39.8</code> tok/s</td>
+      <td>
+<code class="language-plaintext highlighter-rouge">35.6</code> tok/s</td>
+      <td>
+<code class="language-plaintext highlighter-rouge">47.0</code> tok/s</td>
+      <td>
+<code class="language-plaintext highlighter-rouge">39.8</code> tok/s</td>
     </tr>
     <tr>
       <td>Prefix-cache hit rate</td>
@@ -1047,152 +1590,66 @@ starting point. Thank you for reading.</p>
       <td><code class="language-plaintext highlighter-rouge">1.21x</code></td>
     </tr>
   </tbody>
-</table>]]></content><author><name>chus-antonanzas</name></author><summary type="html"><![CDATA[Why simple chat benchmarks are not enough for inference performance evaluation, and how to model agentic workloads with branching, prefix reuse, bursty timing, token heterogeneity, and reproducible synthetic sessions.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gatech-sysml.github.io/images/posts/agentic-workloads/header.png" /><media:content medium="image" url="https://gatech-sysml.github.io/images/posts/agentic-workloads/header.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Introducing CompOFA</title><link href="https://gatech-sysml.github.io/2021/04/28/compofa.html" rel="alternate" type="text/html" title="Introducing CompOFA" /><published>2021-04-28T00:00:00+00:00</published><updated>2026-04-12T14:20:01+00:00</updated><id>https://gatech-sysml.github.io/2021/04/28/compofa</id><content type="html" xml:base="https://gatech-sysml.github.io/2021/04/28/compofa.html"><![CDATA[<h1 id="introduction">Introduction</h1>
+</table>
+  </section>
 
-<p>If you’ve trained deep learning models, you know the process can take hours or days (weeks?) and thousands of dollars’ worth of computation. With increasing use of DNNs in common production, this problem only gets bigger – they need to be used on diverse deployment targets with widely varying latency constraints, based on hardware capabilities and application requirements. Designing DNN architectures that maximize accuracy under these constraints adds another degree of complexity requiring manual expertise and/or neural architecture search (NAS) – which are even slower and costlier than training. Clearly, repeating these processes for every deployment target is not scalable and therefore, solving this problem is essential for making DNNs easier to use in real deployment.</p>
-
-<figure class="figure">
-  <a class="figure-image" aria-label="figure link">
-    <img src="/images/posts/compofa/model-family.png" style="
-        width: 400px;
-        max-height: unset;
-      " alt="figure image" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
-  </a>
   
-</figure>
-
-<p>In <em>CompOFA</em>, we propose a cost-effective and faster technique to build model families that support multiple deployment platforms. Using insights from model design and system deployment, we build upon the current best methods that take 40-50 GPU days of computation and make their training and searching processes <strong>faster by 2x and 200x</strong>, respectively – all while building a family of equally efficient and diverse models!</p>
-
-<h1 id="how-its-done-today">How it’s done today</h1>
-
-<figure class="figure">
-  <a class="figure-image" aria-label="Conventional, individual training">
-    <img src="/images/posts/compofa/naive-training.png" style="
-        width: 400px;
-        max-height: unset;
-      " alt="Conventional, individual training" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
-  </a>
   
-    <figcaption class="figure-caption">
-      Conventional, individual training
-
-    </figcaption>
   
-</figure>
 
-<p>The prevailing norm today is to build individual neural networks. We design and train single monolithic DNNs with a fixed accuracy and latency measure (or computational complexity, energy usage, etc.). Both, designing efficient architectures and training on production-grade datasets, require computation worth several GPU hours with slow turnaround, expensive hardwares and expertise in ML and Systems. In 2019, a study estimated the carbon emissions of one well-known NAS technique to be 283 metric tons – or nearly 60 times the emissions over an average human lifetime! Thus it is simply unscalable to continue this trend of designing and training individual DNNs for deployment.</p>
-
-<figure class="figure">
-  <a class="figure-image" aria-label="Once-For-All (OFA): co-trained model families">
-    <img src="/images/posts/compofa/ofa.png" style="
-        width: 400px;
-        max-height: unset;
-      " alt="Once-For-All (OFA): co-trained model families" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
-  </a>
-  
-    <figcaption class="figure-caption">
-      Once-For-All (OFA): co-trained model families
-
-    </figcaption>
-  
-</figure>
-
-<p><em>Once-For-All (OFA)</em> proposed to address this problem via weight-shared sub-networks of a larger network. These sub-networks of varying sizes had diverse accuracy and latency measures and could be trained simultaneously (rather than one-by-one). Post this one-time training, one can independently search and extract a subnetwork with optimal accuracy for a given deployment. Hence, OFA significantly improved the scalability over the naïve method. But, at 40-50 GPU days of train time, OFA remained expensive and required special training &amp; searching procedures for its huge search space of $10^{19}$ models.</p>
-
-<p>In <em>CompOFA</em>, we find insights that speed up OFA’s training and searching methodologies, while making it easier to use.</p>
-
-<h1 id="compofa">CompOFA</h1>
-
-<p>OFA built a model search space by slicing smaller subnetworks from a larger network – by choosing subsets of its layers (depth), channels (width), resolution, etc. This choice was made independently at each layer, contributing to a combinatorial explosion of $10^{10}-10^{19}$ models! These models don’t come free – training so many of them together needs a slow, phased approach. After training, the search also requires building special accuracy and latency estimators.</p>
-
-<p><strong>But do we need such a large search space?</strong></p>
-
-<ul>
-  <li>
-    <p><strong>Are all these models efficient? No!</strong> Many of these subnetworks are of dimensions that are suboptimal, lying well below the optimal accuracy-latency tradeoff.</p>
-  </li>
-  <li>
-    <p><strong>Are all these models different enough? No!</strong> Imagine $10^{19}$ networks where the smallest and largest differ in latency by just 100ms – this fine granularity is too small to matter for real hardware.</p>
-  </li>
-</ul>
-
-<p>In CompOFA, we question whether we can identify and focus our attention just on models that are close to optimal, and at a sufficient granularity?  After all, it’s not common practice to treat these model dimensions as independent or random –- we often combine dimensions like depth and width to vary together i.e. in a compound fashion. This common intuition is backed by empirical studies like <a href="https://arxiv.org/abs/1905.11946">EfficientNet</a> and <a href="https://arxiv.org/abs/2003.13678">RegNet</a>, which showed that there are optimal relations between these dimensions.</p>
-
-<figure class="figure">
-  <a class="figure-image" aria-label="CompOFA reduces combinatorial explosion of the search space by exploiting the same direction of growth of accuracy and latency.">
-    <img src="/images/posts/compofa/dw-grid.png" style="
-        width: 400px;
-        max-height: unset;
-      " alt="CompOFA reduces combinatorial explosion of the search space by exploiting the same direction of growth of accuracy and latency." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
-  </a>
-  
-    <figcaption class="figure-caption">
-      CompOFA reduces combinatorial explosion of the search space by exploiting the same direction of growth of accuracy and latency.
-
-    </figcaption>
-  
-</figure>
-
-<p>Inspired by this, CompOFA uses a simple but powerful heuristic – <strong>choose models that grow depth and width together</strong>. This makes our search space much more tractable, but still just as efficient and diverse for actual use.</p>
-
-<p>In our paper, we show that we can train this model family in <strong>half the time</strong> and all at once, without a slow phased approach. After training, we can search for models <strong>216x</strong> faster, and without the time and effort to build special estimators.</p>
-
-<center>
-
-<!-- | \*\*Metric\*\*               |   \*\*OFA\*\* | \*\*CompOFA\*\* |  \*\*Savings\*\* |
-|--------------------------|----------:|------------:|-------------:|
-| \*\*Train Time\*\* \(GPU hrs) |     978.3 |       493.5 |       \*\*2x\*\* |
-| \*\*Train Cost\*\* \(USD)     |     \$2.4k |       \$1.2k |       \*\*2x\*\* |
-| \*\*CO2 emissions\*\* \(lbs)  |       277 |         128 |       \*\*2x\*\* |
-| \*\*Search Time\*\*          | 4.5 hours |  75 seconds |     \*\*216x\*\* | -->
-
-<figure class="figure">
-  <a class="figure-image" aria-label="figure link">
-    <img src="/images/posts/compofa/table.png" style="
-        width: 400px;
-        max-height: unset;
-      " alt="figure image" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
-  </a>
-  
-</figure>
+  <section class="background" data-size="page">
+    <!--
+  background: ;
+  dark: ;
+  size: ;
+-->
 
 
+<div class="post-nav">
+  <span>
+    
+      <i class="icon fa-solid fa-angle-left"></i> Previous post<br>
+      <a href="/2021/04/28/compofa.html">
+        Introducing CompOFA
+      </a>
+    
+  </span>
+  <span>
+    
+  </span>
+</div>
+  </section>
 
-</center>
 
-<p>Despite these savings, CompOFA does not compromise on its original goal. It’s able to extract networks for multiple latency targets on distinct hardware types, and match the existing SOTA in both optimality and range of its models.</p>
+    </main>
+    
 
-<figure class="figure">
-  <a class="figure-image" aria-label="CompOFA generates efficient model families for diverse hardwares -- from mobile phones to GPUs">
-    <img src="/images/posts/compofa/pareto-results.png" style="
-        width: 400px;
-        max-height: unset;
-      " alt="CompOFA generates efficient model families for diverse hardwares -- from mobile phones to GPUs" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;" />
-  </a>
-  
-    <figcaption class="figure-caption">
-      CompOFA generates efficient model families for diverse hardwares – from mobile phones to GPUs
 
-    </figcaption>
-  
-</figure>
+<footer class="background" style="--image: url('')" data-dark="true" data-size="wide">
+  <!--
+    <div>
+      Extra details like contact info or address
+    </div>
+  -->
 
-<h1 id="learn-more">Learn more</h1>
+  <div>
+    
+  </div>
 
-<p>CompOFA improves the speed, cost, and usability of jointly training models for many deployment targets. By highlighting insights on model design and system deployment, we try to address an important problem for real-world usability of DNNs.</p>
+  <div>
+    © 2026
+    Systems for AI Lab
+     
+  </div>
 
-<p>To know more, please check out our <a href="https://arxiv.org/abs/2104.12642">paper</a> and <a href="https://iclr.cc/media/PosterPDFs/ICLR%202021/2c3ddf4bf13852db711dd1901fb517fa.png">poster</a> at ICLR 2021! Our code and pretrained models are also available on our <a href="https://github.com/gatech-sysml/compofa">Github repository</a>.</p>
+  <!-- <input
+    type="checkbox"
+    class="dark-toggle"
+    data-tooltip="Dark mode"
+    aria-label="toggle dark mode"
+    oninput="onDarkToggleChange(event)"
+  > -->
+</footer>
 
-<h2 id="citation">Citation</h2>
-
-<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">compofa-iclr21</span><span class="p">,</span>
-  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Manas Sahni and Shreya Varshini and Alind Khare and
-               Alexey Tumanov}</span><span class="p">,</span>
-  <span class="na">title</span>     <span class="p">=</span> <span class="s">{CompOFA: Compound Once-For-All Networks for Faster Multi-Platform Deployment}</span><span class="p">,</span>
-  <span class="na">month</span>     <span class="p">=</span> <span class="s">{May}</span><span class="p">,</span>
-  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proc. of the 9th International Conference on Learning Representations}</span><span class="p">,</span>
-  <span class="na">series</span> <span class="p">=</span> <span class="s">{ICLR '21}</span><span class="p">,</span>
-  <span class="na">year</span> <span class="p">=</span> <span class="s">{2021}</span><span class="p">,</span>
-  <span class="na">url</span>       <span class="p">=</span> <span class="s">{https://openreview.net/forum?id=IgIk8RRT-Z}</span>
-<span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>alind-khare</name></author><summary type="html"><![CDATA[Fast & Efficient Training of Once-For-All (OFA) models.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://github.com/gatech-sysml/CompOFA/raw/main/figures/overview.png" /><media:content medium="image" url="https://github.com/gatech-sysml/CompOFA/raw/main/figures/overview.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+  </body>
+</html>
