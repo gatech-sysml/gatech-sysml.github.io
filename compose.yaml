@@ -11,8 +11,6 @@ x-site: &site
     - jekyll-cache:/usr/src/app/.jekyll-cache
     - sass-cache:/usr/src/app/.sass-cache
     - citation-cache:/usr/src/app/_cite/.cache
-  environment:
-    JEKYLL_ENV: development
 
 services:
   site:

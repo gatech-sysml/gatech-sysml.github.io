@@ -55,5 +55,6 @@ docker compose down --volumes --rmi local
 ```
 
 Source edits and deliberately generated citations remain in the repository.
-GitHub Pages continues to publish from `gh-pages`; GitHub preview and deployment
-workflows need to be verified when this branch is submitted.
+GitHub Pages continues to publish from `gh-pages`. The upgraded GitHub PR build
+has passed; production deployment and the new preview deployment workflow still
+need verification after merge.

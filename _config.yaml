@@ -76,6 +76,7 @@ exclude:
   - CITATION.cff
   - compose.yaml
   - TEMPLATE.md
+  - site-export
   - vendor
 
 # MathJax configuration from Lab Website Template v1.4.0

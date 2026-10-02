@@ -17,5 +17,8 @@ Verification completed locally:
 - Team roles retained: PI 1, PhD 6, masters 16, undergraduate 1, and alumni 17.
 - Live reload and configuration restart passed; tracked file hashes unchanged.
 - Explicit citation generation succeeded; committed citations retained afterward.
-- Workflow YAML and actionlint passed. GitHub execution remains to be validated.
+- Workflow YAML and actionlint passed. The upgraded GitHub PR workflow passed
+  source collection, citation generation, and the Ruby 3.4 preview build.
+  Main's legacy Ruby 3.1 preview workflow failed against the new lockfile.
+  Production and the new preview deployment workflow need verification after merge.
 - Disposable volume/image cleanup and rebuild/restart passed.
