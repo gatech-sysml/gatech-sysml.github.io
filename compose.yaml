@@ -1,0 +1,36 @@
+x-site: &site
+  image: sail-site:local
+  build:
+    context: .
+    dockerfile: .docker/Dockerfile
+  init: true
+  working_dir: /usr/src/app
+  volumes:
+    - .:/usr/src/app
+    - site-output:/usr/src/app/_site
+    - jekyll-cache:/usr/src/app/.jekyll-cache
+    - sass-cache:/usr/src/app/.sass-cache
+    - citation-cache:/usr/src/app/_cite/.cache
+  environment:
+    JEKYLL_ENV: development
+
+services:
+  site:
+    <<: *site
+    ports:
+      - "127.0.0.1:4000:4000"
+      - "127.0.0.1:35729:35729"
+  build:
+    <<: *site
+    profiles: [tools]
+    command: [build]
+  cite:
+    <<: *site
+    profiles: [tools]
+    command: [cite]
+
+volumes:
+  site-output:
+  jekyll-cache:
+  sass-cache:
+  citation-cache:
