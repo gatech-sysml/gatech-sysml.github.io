@@ -1,30 +1,14 @@
-# start with official ruby docker image as base
-FROM ruby:3.1.2
-
-# set working directory within container
+FROM ruby:3.4-bookworm@sha256:246b2dc3f6e40bba3af18503c22997a34dbb27c9f97e198dde6dd727895115c5
 WORKDIR /usr/src/app
-
-# pull in ruby (jekyll) and python (cite process) package info
-COPY Gemfile Gemfile.lock _cite/requirements.txt ./
-
-# install ruby packages
-RUN VERSION=$(grep -A 1 'BUNDLED WITH' Gemfile.lock | tail -n 1 | xargs); \
-    gem install bundler --version ${VERSION} && \
-    bundle _${VERSION}_ install
-
-# install python
-RUN apt update && apt install -y python3 python3-pip
-
-# install python packages
-RUN python3 -m pip install --no-cache-dir --upgrade --requirement requirements.txt
-
-# install python package for listening for file changes
-RUN pip install "watchdog[watchmedo]==3.0.0"
-
-# ports used by jekyll
-EXPOSE 4000
-EXPOSE 35729
-
-# run jekyll and cite process
-COPY .docker/entrypoint.sh /var
-CMD [ "/var/entrypoint.sh" ]
+ENV VIRTUAL_ENV=/opt/cite-venv
+ENV PATH="/opt/cite-venv/bin:$PATH"
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-venv && rm -rf /var/lib/apt/lists/*
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
+COPY _cite/requirements.txt /tmp/cite-requirements.txt
+RUN python3 -m venv "$VIRTUAL_ENV" && pip install --no-cache-dir -r /tmp/cite-requirements.txt 'watchdog[watchmedo]==6.0.0'
+COPY .docker/entrypoint.sh /usr/local/bin/site-entrypoint
+COPY .docker/preview.yaml /opt/preview.yaml
+EXPOSE 4000 35729
+ENTRYPOINT ["site-entrypoint"]
+CMD ["site"]

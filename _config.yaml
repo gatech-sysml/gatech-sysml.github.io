@@ -74,3 +74,13 @@ exclude:
   - README.md
   - LICENSE.md
   - CITATION.cff
+  - compose.yaml
+  - TEMPLATE.md
+  - site-export
+  - vendor
+
+# MathJax configuration from Lab Website Template v1.4.0
+jekyll-spaceship:
+  mathjax-processor:
+    src:
+      - https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js

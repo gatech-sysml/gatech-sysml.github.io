@@ -9,7 +9,8 @@
 
   const onLoad = () => {
     // update toggle button to match loaded mode
-    document.querySelector(".dark-toggle").checked =
+    const toggle = document.querySelector(".dark-toggle");
+    if (toggle) toggle.checked =
       document.documentElement.dataset.dark === "true";
   };
 
