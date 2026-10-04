@@ -2,7 +2,8 @@
 <html lang="en" data-dark="true">
   <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!--
+  
+<!--
   put your analytics (e.g. Google Analytics) tracking code here
 -->
 <!-- Google tag (gtag.js) -->
@@ -15,11 +16,17 @@
   gtag('config', 'G-S0NN4DKE7J');
 </script>
 
+
+
   <!--
   put your search engine verification (e.g. Google Search Console) tag here
 -->
 
   
+
+
+
+
 
 
 
@@ -99,9 +106,9 @@
 
 <!-- Font Awesome icons (load asynchronously due to size) -->
 
-<link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet" media="none" onload="this.removeAttribute('media'); this.onload = null;">
+<link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet" media="none" onload="this.removeAttribute('media'); this.onload = null;">
 <noscript>
-  <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
 </noscript>
 
   <!-- third party styles -->
@@ -165,6 +172,10 @@
 
   
     <link href="/_styles/dark-toggle.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/details.css" rel="stylesheet">
   
 
   
@@ -397,44 +408,50 @@
 
   <section class="background" data-size="1" style="--image: url('/images/posts/agentic-workloads/header.png')">
     <!--
-  background: /images/posts/agentic-workloads/header.png;
-  dark: ;
-  size: 1;
+  <background>/images/posts/agentic-workloads/header.png</background>
+  <dark></dark>
+  <size>1</size>
 -->
 
 
 <h1 class="center">Agentic Workloads for Inference Evaluation</h1>
+
 
 <div class="post-info">
   
     
     
       
+      
+        
+
+
 
 <div class="portrait-wrapper">
   <a href="/members/chus-antonanzas.html" class="portrait" data-style="tiny" aria-label="Chus Antonanzas">
+    
+      <i class="icon fa-solid fa-user-graduate"></i>
+    
+
     <img src="https://chus.space/static/me.jpg" class="portrait-image" alt="member portrait" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
 
     
-      <span class="portrait-text">
-        
-          <span class="portrait-name">
-            Chus Antonanzas
-          </span>
-        
-
-        
-          <span class="portrait-role">
-            
-            <i class="icon fa-solid fa-user-graduate"></i>
-            <span>Masters Student</span>
-          </span>
-        
+      <span class="portrait-name">
+        Chus Antonanzas
       </span>
+    
+
+    
+      <span class="portrait-description">
+        Masters Student
+      </span>
+    
+
     
   </a>
 </div>
 
+      
     
   
 
@@ -451,7 +468,7 @@
   
     <span data-tooltip="Last updated on">
       <i class="icon fa-solid fa-clock-rotate-left"></i>
-      <span>June 18, 2026</span>
+      <span>October 04, 2026</span>
     </span>
   
 </div>
@@ -463,9 +480,9 @@
 
   <section class="background" data-size="page">
     <!--
-  background: ;
-  dark: ;
-  size: ;
+  <background></background>
+  <dark></dark>
+  <size></size>
 -->
 
 
@@ -632,29 +649,29 @@ completed the user’s request.</p>
 <p><em>A typical agentic loop.</em></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">prompt</span><span class="p">(</span><span class="n">user_input</span><span class="p">,</span> <span class="n">session</span><span class="p">):</span>
-  <span class="n">session</span><span class="p">.</span><span class="n">history</span><span class="p">.</span><span class="n">append</span><span class="p">({</span><span class="s">"role"</span><span class="p">:</span> <span class="s">"user"</span><span class="p">,</span> <span class="s">"content"</span><span class="p">:</span> <span class="n">user_input</span><span class="p">})</span>
+  <span class="n">session</span><span class="p">.</span><span class="n">history</span><span class="p">.</span><span class="nf">append</span><span class="p">({</span><span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="n">user_input</span><span class="p">})</span>
 
   <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
     <span class="c1"># One LLM inference request
-</span>    <span class="n">response</span> <span class="o">=</span> <span class="n">call_llm</span><span class="p">(</span>
+</span>    <span class="n">response</span> <span class="o">=</span> <span class="nf">call_llm</span><span class="p">(</span>
       <span class="n">system</span><span class="o">=</span><span class="n">session</span><span class="p">.</span><span class="n">system_prompt</span><span class="p">,</span>
       <span class="n">tools</span><span class="o">=</span><span class="n">session</span><span class="p">.</span><span class="n">tool_definitions</span><span class="p">,</span>
       <span class="n">messages</span><span class="o">=</span><span class="n">session</span><span class="p">.</span><span class="n">history</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">session</span><span class="p">.</span><span class="n">history</span><span class="p">.</span><span class="n">append</span><span class="p">({</span><span class="s">"role"</span><span class="p">:</span> <span class="s">"assistant"</span><span class="p">,</span> <span class="s">"content"</span><span class="p">:</span> <span class="n">response</span><span class="p">.</span><span class="n">content</span><span class="p">})</span>
+    <span class="n">session</span><span class="p">.</span><span class="n">history</span><span class="p">.</span><span class="nf">append</span><span class="p">({</span><span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">assistant</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="n">response</span><span class="p">.</span><span class="n">content</span><span class="p">})</span>
 
-    <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">stop_reason</span> <span class="o">==</span> <span class="s">"end_turn"</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">stop_reason</span> <span class="o">==</span> <span class="sh">"</span><span class="s">end_turn</span><span class="sh">"</span><span class="p">:</span>
       <span class="k">return</span> <span class="n">response</span>
 
     <span class="c1"># Make tool calls concurrently, then append results
-</span>    <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">gather</span><span class="p">(</span>
-      <span class="n">execute_tool</span><span class="p">(</span><span class="n">tc</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">tc</span><span class="p">.</span><span class="n">arguments</span><span class="p">)</span> <span class="k">for</span> <span class="n">tc</span> <span class="ow">in</span> <span class="n">response</span><span class="p">.</span><span class="n">tool_calls</span>
+</span>    <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">gather</span><span class="p">(</span>
+      <span class="nf">execute_tool</span><span class="p">(</span><span class="n">tc</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">tc</span><span class="p">.</span><span class="n">arguments</span><span class="p">)</span> <span class="k">for</span> <span class="n">tc</span> <span class="ow">in</span> <span class="n">response</span><span class="p">.</span><span class="n">tool_calls</span>
     <span class="p">)</span>
-    <span class="k">for</span> <span class="n">tool_call</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">tool_calls</span><span class="p">,</span> <span class="n">results</span><span class="p">):</span>
-      <span class="n">session</span><span class="p">.</span><span class="n">history</span><span class="p">.</span><span class="n">append</span><span class="p">({</span>
-          <span class="s">"role"</span><span class="p">:</span> <span class="s">"tool_result"</span><span class="p">,</span>
-          <span class="s">"tool_use_id"</span><span class="p">:</span> <span class="n">tool_call</span><span class="p">.</span><span class="nb">id</span><span class="p">,</span>
-          <span class="s">"content"</span><span class="p">:</span> <span class="n">result</span><span class="p">.</span><span class="n">content</span><span class="p">,</span>
+    <span class="k">for</span> <span class="n">tool_call</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">tool_calls</span><span class="p">,</span> <span class="n">results</span><span class="p">):</span>
+      <span class="n">session</span><span class="p">.</span><span class="n">history</span><span class="p">.</span><span class="nf">append</span><span class="p">({</span>
+          <span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">tool_result</span><span class="sh">"</span><span class="p">,</span>
+          <span class="sh">"</span><span class="s">tool_use_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">tool_call</span><span class="p">.</span><span class="nb">id</span><span class="p">,</span>
+          <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="n">result</span><span class="p">.</span><span class="n">content</span><span class="p">,</span>
       <span class="p">})</span>
     <span class="c1"># Loop back. Next iteration includes all tool results
 </span></code></pre></div></div>
@@ -741,11 +758,11 @@ synthetic history turns<sup id="note-ref-7"><a href="#note-7">7</a></sup>. The k
 but that request <code class="language-plaintext highlighter-rouge">N</code> and request <code class="language-plaintext highlighter-rouge">N+1</code> share almost all of their tokens as <code class="language-plaintext highlighter-rouge">N</code> increases.</p>
 
 <figure class="figure">
-  <a class="figure-image" aria-label="Illustrative context growth over turns. For a single user intervention at turn 1, context grows until +250k. Model output, tool results and other events are accumulated in history, accounting for the majority of the context.">
+  <a class="figure-image" aria-label="Illustrative context growth over turns. For a single user intervention at turn 1, context grows until 250k. Model output, tool results and other events are accumulated in history, accounting for the majority of the context.">
     <img src="/images/posts/agentic-workloads/context_growth_over_turns_opaque.png" style="
         width: 760px;
         max-height: unset;
-      " alt="Illustrative context growth over turns. For a single user intervention at turn 1, context grows until +250k. Model output, tool results and other events are accumulated in history, accounting for the majority of the context." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+      " alt="Illustrative context growth over turns. For a single user intervention at turn 1, context grows until 250k. Model output, tool results and other events are accumulated in history, accounting for the majority of the context." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -873,11 +890,11 @@ prefix cache configuration, while replica B has it disabled.</p>
 </ul>
 
 <figure class="figure">
-  <a class="figure-image" aria-label="TTFC versus total prompt tokens for the same synthetic requests (log scale on the y-axis). With the default prefix cache, median TTFC grows from roughly 60 ms to 0.33 s across the session. With prefix caching disabled, median TTFC rises from roughly 0.1 s to about 10 s by the time the prompt reaches 100k tokens.">
+  <a class="figure-image" aria-label="TTFC versus total prompt tokens for the same synthetic requests log scale on the y-axis . With the default prefix cache, median TTFC grows from roughly 60 ms to 0.33 s across the session. With prefix caching disabled, median TTFC rises from roughly 0.1 s to about 10 s by the time the prompt reaches 100k tokens.">
     <img src="/images/posts/agentic-workloads/case_study_1_ttfc_scaling_opaque.png" style="
         width: 640px;
         max-height: unset;
-      " alt="TTFC versus total prompt tokens for the same synthetic requests (log scale on the y-axis). With the default prefix cache, median TTFC grows from roughly 60 ms to 0.33 s across the session. With prefix caching disabled, median TTFC rises from roughly 0.1 s to about 10 s by the time the prompt reaches 100k tokens." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+      " alt="TTFC versus total prompt tokens for the same synthetic requests log scale on the y-axis . With the default prefix cache, median TTFC grows from roughly 60 ms to 0.33 s across the session. With prefix caching disabled, median TTFC rises from roughly 0.1 s to about 10 s by the time the prompt reaches 100k tokens." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -919,11 +936,11 @@ Most steps add a modest amount of tokens and generate short outputs, but a small
 number create very large bursts.</p>
 
 <figure class="figure">
-  <a class="figure-image" aria-label="Empirical vs fitted distributions of new input tokens for the trace in Case study 1. Cropped to the 95th percentile (the max value is around 20000 tokens). Most steps add just a few new input tokens, but a small number add very large bursts. I tested lognormal, Weibull, gamma, exponential, Pareto, normal and inverse Gaussian distributions, and found that the latter fits best.">
+  <a class="figure-image" aria-label="Empirical vs fitted distributions of new input tokens for the trace in Case study 1. Cropped to the 95th percentile the max value is around 20000 tokens . Most steps add just a few new input tokens, but a small number add very large bursts. I tested lognormal, Weibull, gamma, exponential, Pareto, normal and inverse Gaussian distributions, and found that the latter fits best.">
     <img src="/images/posts/agentic-workloads/new_tokens_fit_p95_linear_opaque.png" style="
         width: 589px;
         max-height: unset;
-      " alt="Empirical vs fitted distributions of new input tokens for the trace in Case study 1. Cropped to the 95th percentile (the max value is around 20000 tokens). Most steps add just a few new input tokens, but a small number add very large bursts. I tested lognormal, Weibull, gamma, exponential, Pareto, normal and inverse Gaussian distributions, and found that the latter fits best." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+      " alt="Empirical vs fitted distributions of new input tokens for the trace in Case study 1. Cropped to the 95th percentile the max value is around 20000 tokens . Most steps add just a few new input tokens, but a small number add very large bursts. I tested lognormal, Weibull, gamma, exponential, Pareto, normal and inverse Gaussian distributions, and found that the latter fits best." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -937,11 +954,11 @@ number create very large bursts.</p>
 the best fit for our empirical data in the multi-turn workload in Case study 1.</p>
 
 <figure class="figure">
-  <a class="figure-image" aria-label="Empirical vs fitted distributions of generated output tokens for the trace in Case study 1. Cropped to the 95th percentile (the max value is around 14000 tokens). The same family of distributions was tested here as for the input tokens, with the same best fit.">
+  <a class="figure-image" aria-label="Empirical vs fitted distributions of generated output tokens for the trace in Case study 1. Cropped to the 95th percentile the max value is around 14000 tokens . The same family of distributions was tested here as for the input tokens, with the same best fit.">
     <img src="/images/posts/agentic-workloads/output_tokens_fit_p95_linear_opaque.png" style="
         width: 589px;
         max-height: unset;
-      " alt="Empirical vs fitted distributions of generated output tokens for the trace in Case study 1. Cropped to the 95th percentile (the max value is around 14000 tokens). The same family of distributions was tested here as for the input tokens, with the same best fit." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+      " alt="Empirical vs fitted distributions of generated output tokens for the trace in Case study 1. Cropped to the 95th percentile the max value is around 14000 tokens . The same family of distributions was tested here as for the input tokens, with the same best fit." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -1028,11 +1045,11 @@ tail is heavy, with 6% being larger than 10 seconds. This effect is similar to t
 <p>In the context of the DAG that is an agentic session, this means that any node can have multiple children or parents. It is not a linear chain anymore. Fan-out and fan-in degrees can be bigger than 1, which creates dependencies between requests in a way that we did not have before. It also introduces context inheritance dynamics between nodes (not all nodes inherit the full history).</p>
 
 <figure class="figure">
-  <a class="figure-image" aria-label="A simplified DAG session. One request has a fan-out degree of 3 (subsession spawn), and one has a fan-in degree of 3 (subsessions reporting back). This is the shape used in Case studies 2 and 3.">
+  <a class="figure-image" aria-label="A simplified DAG session. One request has a fan-out degree of 3 subsession spawn , and one has a fan-in degree of 3 subsessions reporting back . This is the shape used in Case studies 2 and 3.">
     <img src="/images/posts/agentic-workloads/case-study-2-dag_opaque.png" style="
         width: 523px;
         max-height: unset;
-      " alt="A simplified DAG session. One request has a fan-out degree of 3 (subsession spawn), and one has a fan-in degree of 3 (subsessions reporting back). This is the shape used in Case studies 2 and 3." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+      " alt="A simplified DAG session. One request has a fan-out degree of 3 subsession spawn , and one has a fan-in degree of 3 subsessions reporting back . This is the shape used in Case studies 2 and 3." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -1112,11 +1129,11 @@ cache hit rate than A, it is not enough to compensate for the last two character
 increases the observed TTFC.</p>
 
 <figure class="figure">
-  <a class="figure-image" aria-label="Duration-weighted decode overlap. For each x-axis value k, the y-axis shows the share of total decode time spent with at least k simultaneous decode requests. The linear run never exceeds 6 simultaneous active decodes. The DAG run reaches 41, and spends more than 60% of decode-active time at 10 or more simultaneous decode requests.">
+  <a class="figure-image" aria-label="Duration-weighted decode overlap. For each x-axis value k, the y-axis shows the share of total decode time spent with at least k simultaneous decode requests. The linear run never exceeds 6 simultaneous active decodes. The DAG run reaches 41, and spends more than 60 of decode-active time at 10 or more simultaneous decode requests.">
     <img src="/images/posts/agentic-workloads/case_study_2_decode_overlap_opaque.png" style="
         width: 700px;
         max-height: unset;
-      " alt="Duration-weighted decode overlap. For each x-axis value k, the y-axis shows the share of total decode time spent with at least k simultaneous decode requests. The linear run never exceeds 6 simultaneous active decodes. The DAG run reaches 41, and spends more than 60% of decode-active time at 10 or more simultaneous decode requests." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+      " alt="Duration-weighted decode overlap. For each x-axis value k, the y-axis shows the share of total decode time spent with at least k simultaneous decode requests. The linear run never exceeds 6 simultaneous active decodes. The DAG run reaches 41, and spends more than 60 of decode-active time at 10 or more simultaneous decode requests." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -1162,11 +1179,11 @@ Session dispatch rates are thus:</p>
 <p>To confirm this, I replay the DAG workload at the linear frontier rate <code class="language-plaintext highlighter-rouge">rho_l* = 5.50</code>. The DAG workload is comfortable: all SLOs are met with headroom. TBC and E2E p95 are lower at 57.6 ms (vs 74.9 ms for linear) and 8.40 s (vs 11.61 s for linear), respectively. TPOT throughput rises from 35.6 to 47.0 tok/s. The system is underloaded.</p>
 
 <figure class="figure">
-  <a class="figure-image" aria-label="Frontier behavior at the optimal normalized request rates `rho_l* = 5.50` and `rho_d* = 6.67`. Linear TTFC (left) is lower, consistent with its shorter context lengths. DAG has a better mid-tail distribution and reaches a similar p95 at a higher load, consistent with higher cache reuse (right).">
+  <a class="figure-image" aria-label="Frontier behavior at the optimal normalized request rates rho l 5.50 and rho d 6.67 . Linear TTFC left is lower, consistent with its shorter context lengths. DAG has a better mid-tail distribution and reaches a similar p95 at a higher load, consistent with higher cache reuse right .">
     <img src="/images/posts/agentic-workloads/case_study_3_frontier_metric_facets_opaque.png" style="
         width: 760px;
         max-height: unset;
-      " alt="Frontier behavior at the optimal normalized request rates `rho_l* = 5.50` and `rho_d* = 6.67`. Linear TTFC (left) is lower, consistent with its shorter context lengths. DAG has a better mid-tail distribution and reaches a similar p95 at a higher load, consistent with higher cache reuse (right)." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+      " alt="Frontier behavior at the optimal normalized request rates rho l 5.50 and rho d 6.67 . Linear TTFC left is lower, consistent with its shorter context lengths. DAG has a better mid-tail distribution and reaches a similar p95 at a higher load, consistent with higher cache reuse right ." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -1332,11 +1349,11 @@ starting point. Thank you for reading.</p>
 </figure>
 
 <figure class="figure">
-  <a class="figure-image" aria-label="Empirical CDF of `wait_after_ready` for the OpenClaw trace in Case study 1, with log-log axes. The dashed line marks the 100 ms threshold used for the Pareto tail fit. We see the initial spike and the slower heavy tail.">
+  <a class="figure-image" aria-label="Empirical CDF of wait after ready for the OpenClaw trace in Case study 1, with log-log axes. The dashed line marks the 100 ms threshold used for the Pareto tail fit. We see the initial spike and the slower heavy tail.">
     <img src="/images/posts/agentic-workloads/wait_after_ready_pareto_tail_ccdf_opaque.png" style="
         width: 680px;
         max-height: unset;
-      " alt="Empirical CDF of `wait_after_ready` for the OpenClaw trace in Case study 1, with log-log axes. The dashed line marks the 100 ms threshold used for the Pareto tail fit. We see the initial spike and the slower heavy tail." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+      " alt="Empirical CDF of wait after ready for the OpenClaw trace in Case study 1, with log-log axes. The dashed line marks the 100 ms threshold used for the Pareto tail fit. We see the initial spike and the slower heavy tail." loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
   </a>
   
     <figcaption class="figure-caption">
@@ -1409,7 +1426,7 @@ starting point. Thank you for reading.</p>
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">session_generator</span><span class="pi">:</span>
   <span class="na">type</span><span class="pi">:</span> <span class="s">trace</span>
   <span class="na">trace_file</span><span class="pi">:</span> <span class="s">traces/workload_shape/workload_b_dag.jsonl</span>
-  <span class="na">wrap_mode</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">wrap_mode</span><span class="pi">:</span> <span class="kc">true</span>
   <span class="na">flavor</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">timed_synthetic_session</span>
     <span class="na">page_size</span><span class="pi">:</span> <span class="m">16</span>
@@ -1599,9 +1616,9 @@ starting point. Thank you for reading.</p>
 
   <section class="background" data-size="page">
     <!--
-  background: ;
-  dark: ;
-  size: ;
+  <background></background>
+  <dark></dark>
+  <size></size>
 -->
 
 
@@ -1642,13 +1659,7 @@ starting point. Thank you for reading.</p>
      
   </div>
 
-  <!-- <input
-    type="checkbox"
-    class="dark-toggle"
-    data-tooltip="Dark mode"
-    aria-label="toggle dark mode"
-    oninput="onDarkToggleChange(event)"
-  > -->
+
 </footer>
 
   </body>
