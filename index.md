@@ -1,10 +1,11 @@
 ---
 ---
 
-The System for AI Lab (SAIL) at Georgia Tech, led by Prof. Alexey Tumanov, specializes in advancing systems support and resource management for machine learning (ML) to democratize large-scale AI systems. Our research encompasses the entire AI infrastructure stack, from foundational system design to the development of efficient ML training and inference algorithms. By focusing on managing the complete ML lifecycle, SAIL aims to enhance accessibility and efficiency in AI technologies.
+The System for AI Lab (SAIL) at Georgia Tech, led by Prof. Alexey Tumanov, specializes in AI Systems: systems, resource management, and scheduling for LLMs, reasoning models, and physical AI, both on the edge and in the cloud. We co-design systems and AI algorithms to maximize intelligence per unit cost under both static and dynamic deployment conditions. We make intelligence real-time adaptive, leading to safer, more resilient, and more intelligent AI-powered applications (e.g., safer embodied intelligence). The lab has consistently been innovating on soft real-time ML (SRTML) inference efficiency since 2019. Our research encompasses the entire AI infrastructure stack, from foundational system design to the development of efficient training and inference algorithms. 
 
 # Recent News
 
+- 🎉 [RocketKV](https://github.com/NVlabs/RocketKV) (ICML'25) Sparse Attention is now integrated in [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM/blob/main/examples/sparse_attention/RocketKV.md) 
 - Our paper on LLM training performance modeling via GPU emulation, [Maya](https://arxiv.org/abs/2503.20191) has been accepted at EuroSys'26.
 - 🎉 Congratulations to Payman Behnam, Amey Agrawal, Alind Khare, and Dhruv Garg! Three papers accepted at ACM SIGOPS Operating Systems Review, July 2025.
 - Our papers on common anti-patterns in LLm Inference systems evaluations is now on [Arxiv](https://arxiv.org/pdf/2507.09019).
@@ -13,7 +14,7 @@ The System for AI Lab (SAIL) at Georgia Tech, led by Prof. Alexey Tumanov, speci
 - SuperServe accepted at NSDI'25! [Paper](https://www.usenix.org/conference/nsdi25/presentation/khare) and [Video](https://www.youtube.com/watch?v=rErbqtM7Lvc)
 - Client Availability in Federated Learning presented at EuroMLSys'25, co-located with EuroSys '25. [Paper](https://euromlsys.eu/pdf/euromlsys25-42.pdf)
 - Our papers on [Medha](https://arxiv.org/abs/2502.14051) for efficient multi-million context LLM inference and [Maya](https://arxiv.org/pdf/2503.20191) for optimizing deep learning training workloads are now public.
-- Congratulations to Prof. Tumanov on being [awarded tenure](https://www.cc.gatech.edu/news/computing-celebrates-2025-faculty-promotion-and-tenure-cases) and promotion to the position of associate professor 🎉.
+- Congratulations to Prof. Tumanov on being [awarded tenure](https://www.cc.gatech.edu/news/computing-celebrates-2025-faculty-promotion-and-tenure-cases) and promotion to the position of Associate Professor 🎉.
 - RocketKV 🚀, fast long-context inference with is now KV-cache compression is now on [Arxiv](https://arxiv.org/abs/2502.14051).
 - [Dhruv Garg]({{ '/members/dhruv-garg.html' | relative_url }}) secures [CRNCH PhD Fellowship 2025](https://crnch.gatech.edu/phd-fellowships-awarded/) for his research in Federated Fine-tuning of LLMs.
 - Mnemosyne, our paper on efficient inference up to 10M token context lengths is now [public](https://arxiv.org/abs/2409.17264).
